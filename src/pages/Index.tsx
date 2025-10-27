@@ -88,7 +88,7 @@ const Index = () => {
       title: 'Большой футбол. Выпуск 9: Финал',
       date: '19 октября 2025',
       duration: '45 мин (матч 20 мин)',
-      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
+      image: 'https://cdn.poehali.dev/files/adebf983-eabd-4647-9dce-6a7d08c84498.jpg',
       category: 'Реалити-шоу'
     }
   ];
