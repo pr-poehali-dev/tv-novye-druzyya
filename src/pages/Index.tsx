@@ -472,6 +472,14 @@ const Index = () => {
                     )}
                     {showAwardCeremony && (
                       <div className="absolute inset-0 bg-gradient-to-b from-purple-900 via-blue-900 to-black flex items-center justify-center overflow-y-auto z-10 p-8">
+                        <div className="absolute inset-0 z-0">
+                          <img 
+                            src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/bf9b01f4-419c-4367-9c3a-f49834a406db.jpg"
+                            alt="Церемония награждения"
+                            className="w-full h-full object-cover opacity-20"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-b from-purple-900/80 via-blue-900/80 to-black/90"></div>
+                        </div>
                         <div className="absolute top-4 right-4 z-20">
                           <Button
                             variant="ghost"
@@ -482,12 +490,13 @@ const Index = () => {
                             <Icon name="X" size={24} />
                           </Button>
                         </div>
-                        <div className="w-full max-w-5xl animate-fade-in">
+                        <div className="w-full max-w-5xl animate-fade-in relative z-10">
                           <div className="text-center text-white mb-12">
                             <div className="mb-6">
                               <Icon name="Sparkles" size={60} className="text-yellow-400 mx-auto mb-4 animate-pulse" />
                               <h2 className="text-5xl font-bold mb-2">ТОРЖЕСТВЕННАЯ ЦЕРЕМОНИЯ</h2>
                               <p className="text-2xl text-yellow-400">Награждение команд турнира "Большой футбол"</p>
+                              <p className="text-lg text-gray-300 mt-4">Финальный счёт: <span className="font-bold text-orange-400">6:2</span></p>
                             </div>
                           </div>
 
