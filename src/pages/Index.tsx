@@ -20,7 +20,88 @@ const Index = () => {
       duration: '45 мин',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/0a358a16-097c-4755-a501-af08a19c9e90.jpg',
       category: 'Travel Show',
-      description: 'Ведущий Максим Зуев отправляется в столицу Азербайджана - город Баку. Знакомство с современной архитектурой, старым городом и культурой страны огней.'
+      description: 'Ведущий Максим Зуев отправляется в столицу Азербайджана - город Баку. Знакомство с современной архитектурой, старым городом и культурой страны огней. Воскресенье, 10:00.'
+    },
+    {
+      id: 100,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 2: Тюмень',
+      date: '3 ноября 2025',
+      duration: '45 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/601f6156-b7b2-49cf-b30b-49fefe54e331.jpg',
+      category: 'Travel Show',
+      description: 'Максим Зуев исследует знаменитый город России - Тюмень. Прогулка по набережной Туры, современные мосты и уникальная атмосфера сибирского города. Воскресенье, 10:00.'
+    },
+    {
+      id: 101,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 3: Озеро Байкал',
+      date: '10 ноября 2025',
+      duration: '45 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/9123d845-81a7-40df-b15d-ca1937c92df4.jpg',
+      category: 'Travel Show',
+      description: 'Путешествие к самому глубокому озеру планеты - Байкалу. Кристально чистый лед, величественные горы и невероятные зимние пейзажи. Воскресенье, 10:00.'
+    },
+    {
+      id: 102,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 4: Лас-Вегас',
+      date: '17 ноября 2025',
+      duration: '45 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/82bb1a5e-a311-4332-8b01-ed32827da38a.jpg',
+      category: 'Travel Show',
+      description: 'Город огней и развлечений - Лас-Вегас. Неоновые огни стрипа, знаменитые казино, фонтаны Белладжио и невероятная атмосфера города в пустыне. Воскресенье, 10:00.'
+    },
+    {
+      id: 103,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 5: Дубай',
+      date: '24 ноября 2025',
+      duration: '45 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/410a87cb-6954-4479-b810-6499030c2a66.jpg',
+      category: 'Travel Show',
+      description: 'Город будущего - Дубай. Бурдж-Халифа, роскошные небоскребы, искусственные острова и закат над пустыней. Погружение в мир роскоши и инноваций. Воскресенье, 10:00.'
+    },
+    {
+      id: 104,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 6: Бангкок',
+      date: '1 декабря 2025',
+      duration: '45 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/4c30b71f-dd1f-451f-a458-00e7e3bdcbc2.jpg',
+      category: 'Travel Show',
+      description: 'Столица Таиланда - Бангкок. Золотые храмы, река Чао Прайя, традиционные лодки и контраст древней культуры с современностью. Воскресенье, 10:00.'
+    },
+    {
+      id: 105,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 7: Сочи',
+      date: '8 декабря 2025',
+      duration: '45 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/4a2e3aba-979f-4c8b-a05c-8d26d98d7bad.jpg',
+      category: 'Travel Show',
+      description: 'Курортная столица России - Сочи. Черное море, пальмовая набережная, Олимпийский парк и горы на горизонте. Летний рай на берегу моря. Воскресенье, 10:00.'
+    },
+    {
+      id: 106,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 8: Москва',
+      date: '15 декабря 2025',
+      duration: '45 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/9b5db122-421c-40b8-a0e2-3b21870b89b9.jpg',
+      category: 'Travel Show',
+      description: 'Сердце России - Москва. Красная площадь, собор Василия Блаженного, Кремль и историческая архитектура. Погружение в столичную жизнь и культуру. Воскресенье, 10:00.'
+    },
+    {
+      id: 107,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 9: Пхукет',
+      date: '22 декабря 2025',
+      duration: '45 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/316c17bd-f40f-49b3-baad-2dba188770bf.jpg',
+      category: 'Travel Show',
+      description: 'Тропический рай - остров Пхукет. Бирюзовая вода, белый песок, известняковые скалы и острова Пи-Пи. Идеальное место для отдыха в Таиланде. Воскресенье, 10:00.'
+    },
+    {
+      id: 108,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 10: Екатеринбург (ФИНАЛ)',
+      date: '29 декабря 2025',
+      duration: '55 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/a76f2799-3517-49c0-a077-587a87147381.jpg',
+      category: 'Travel Show',
+      description: 'Финальный выпуск сезона! Екатеринбург - столица Урала. Храм на Крови, современный деловой центр, река Исеть и Уральские горы. Завершение невероятного путешествия по миру. Воскресенье, 10:00.'
     },
     {
       id: 1,
