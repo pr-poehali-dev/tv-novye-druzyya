@@ -329,13 +329,15 @@ const Index = () => {
                               <div className="w-3 h-3 rounded-full bg-pink-500"></div>
                               <div className="font-bold text-lg">Малиновые Цветочки</div>
                             </div>
+                            <div className="text-4xl font-bold text-orange-500">6</div>
                           </div>
-                          <div className="text-3xl font-bold text-orange-500">VS</div>
+                          <div className="text-3xl font-bold text-orange-500">:</div>
                           <div className="text-center">
                             <div className="flex items-center space-x-2 mb-1">
                               <div className="w-3 h-3 rounded-full bg-orange-600"></div>
                               <div className="font-bold text-lg">Рыжие Крутышки</div>
                             </div>
+                            <div className="text-4xl font-bold text-orange-500">2</div>
                           </div>
                         </div>
                       </div>
