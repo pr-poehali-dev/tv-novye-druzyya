@@ -357,7 +357,7 @@ const Index = () => {
                     </div>
                     {showCredits && (
                       <div className="absolute inset-0 bg-black flex items-center justify-center overflow-hidden z-10">
-                        <div className="absolute top-4 right-4">
+                        <div className="absolute top-4 right-4 z-20">
                           <Button
                             variant="ghost"
                             size="icon"
@@ -367,7 +367,7 @@ const Index = () => {
                             <Icon name="X" size={24} />
                           </Button>
                         </div>
-                        <div className="w-full max-w-3xl px-8 animate-fade-in">
+                        <div className="w-full max-w-3xl px-8 animate-credits-scroll">
                           <div className="space-y-8 text-center text-white">
                             <div className="mb-12">
                               <Icon name="Trophy" size={80} className="text-orange-500 mx-auto mb-4" />
