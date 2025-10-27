@@ -273,19 +273,34 @@ const Index = () => {
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center animate-fade-in">
                     <img
-                      src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/14697817-169b-49d5-8853-459479aa5ecd.jpg"
-                      alt="Прямой эфир"
+                      src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/68a4c642-ebca-49b8-8e54-c9677354e154.jpg"
+                      alt="Прямой эфир - Большой футбол финал"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-4 left-4 flex items-center space-x-3">
                       <img
                         src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/cfbeab5f-6dbf-4333-9543-336c22d16a47.jpg"
                         alt="Новые друзья ТВ"
-                        className="h-12 rounded-lg bg-white/90 p-2"
+                        className="h-12 rounded-lg bg-white/90 p-2 shadow-lg"
                       />
-                      <div className="bg-red-500 text-white px-4 py-2 rounded-full flex items-center animate-pulse">
+                      <div className="bg-red-500 text-white px-4 py-2 rounded-full flex items-center animate-pulse shadow-lg">
                         <Icon name="Video" size={16} className="mr-2" />
                         LIVE
+                      </div>
+                    </div>
+                    <div className="absolute top-4 right-4 bg-black/70 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
+                      <div className="flex items-center space-x-2">
+                        <Icon name="Camera" size={20} className="text-orange-500" />
+                        <span className="text-sm font-medium">Камера 1 • Главный обзор</span>
+                      </div>
+                    </div>
+                    <div className="absolute bottom-20 left-4 bg-black/70 text-white px-4 py-3 rounded-lg backdrop-blur-sm">
+                      <div className="flex items-center space-x-3">
+                        <Icon name="Trophy" size={24} className="text-orange-500" />
+                        <div>
+                          <div className="text-xs text-gray-300">БОЛЬШОЙ ФУТБОЛ</div>
+                          <div className="font-bold">ФИНАЛЬНАЯ ИГРА</div>
+                        </div>
                       </div>
                     </div>
                     <div className="absolute bottom-4 right-4 space-x-2">
