@@ -12,6 +12,14 @@ const Index = () => {
 
   const episodes = [
     {
+      id: 0,
+      title: 'Завтрак с Максимом: Французский',
+      date: '8 ноября 2025',
+      duration: '60 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6643130c-d232-4352-a3ae-eb579c0ae313.jpg',
+      category: 'Кулинарное шоу'
+    },
+    {
       id: 1,
       title: 'Большой футбол. Выпуск 1: Первый матч группового этапа',
       date: '27 октября 2025',
@@ -86,10 +94,10 @@ const Index = () => {
   ];
 
   const schedule = [
-    { time: '09:00', program: 'Утреннее шоу', duration: '2 часа' },
+    { time: '10:00', program: 'Завтрак с Максимом: Французский', duration: '1 час', highlight: true },
     { time: '11:00', program: 'Новости', duration: '30 мин' },
     { time: '11:30', program: 'Документальный фильм', duration: '1 час' },
-    { time: '13:00', program: 'Дневные новости', duration: '30 мин' },
+    { time: '13:00', program: 'Большой футбол: Финал', duration: '45 мин', highlight: true },
     { time: '14:00', program: 'Ток-шоу "Диалог"', duration: '1 час' },
     { time: '16:00', program: 'Культурный код', duration: '1 час' },
     { time: '18:00', program: 'Вечерние новости', duration: '45 мин' },
@@ -221,20 +229,28 @@ const Index = () => {
             {schedule.map((item, index) => (
               <Card
                 key={index}
-                className="hover:shadow-md transition-shadow animate-fade-in bg-card border-border"
+                className={`hover:shadow-md transition-shadow animate-fade-in bg-card ${
+                  item.highlight ? 'border-orange-500 border-2' : 'border-border'
+                }`}
                 style={{ animationDelay: `${index * 50}ms` }}
               >
                 <CardContent className="p-4 flex items-center justify-between">
                   <div className="flex items-center space-x-4">
-                    <div className="bg-primary/10 rounded-lg p-3">
-                      <Icon name="Clock" size={24} className="text-primary" />
+                    <div className={`${item.highlight ? 'bg-orange-500/20' : 'bg-primary/10'} rounded-lg p-3`}>
+                      <Icon 
+                        name={item.highlight ? 'Star' : 'Clock'} 
+                        size={24} 
+                        className={item.highlight ? 'text-orange-500' : 'text-primary'} 
+                      />
                     </div>
                     <div>
                       <h3 className="font-semibold text-lg">{item.program}</h3>
                       <p className="text-sm text-muted-foreground">{item.duration}</p>
                     </div>
                   </div>
-                  <div className="text-2xl font-bold text-primary">{item.time}</div>
+                  <div className={`text-2xl font-bold ${item.highlight ? 'text-orange-500' : 'text-primary'}`}>
+                    {item.time}
+                  </div>
                 </CardContent>
               </Card>
             ))}
