@@ -373,7 +373,7 @@ const Index = () => {
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center animate-fade-in">
                     <img
-                      src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6643130c-d232-4352-a3ae-eb579c0ae313.jpg"
+                      src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7a5b6cbe-0fc3-4cb9-941c-d3fdfbccb3e9.jpg"
                       alt="Прямой эфир - Завтрак с Максимом"
                       className="w-full h-full object-cover"
                     />
@@ -394,32 +394,20 @@ const Index = () => {
                         <span className="text-sm font-medium">Камера 1 • Кухня</span>
                       </div>
                     </div>
-                    <div className="absolute bottom-20 left-4 right-4 flex justify-between items-center">
-                      <div className="bg-black/70 text-white px-4 py-3 rounded-lg backdrop-blur-sm">
-                        <div className="flex items-center space-x-3">
-                          <Icon name="Trophy" size={24} className="text-orange-500" />
-                          <div>
-                            <div className="text-xs text-gray-300">БОЛЬШОЙ ФУТБОЛ • СЕЗОН 1</div>
-                            <div className="font-bold">ФИНАЛЬНАЯ ИГРА</div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="bg-black/80 text-white px-6 py-4 rounded-lg backdrop-blur-sm border-2 border-orange-500/50">
-                        <div className="flex items-center space-x-6">
-                          <div className="text-center">
-                            <div className="flex items-center space-x-2 mb-1">
-                              <div className="w-3 h-3 rounded-full bg-pink-500"></div>
-                              <div className="font-bold text-lg">Малиновые Цветочки</div>
+                    <div className="absolute bottom-20 left-4 right-4">
+                      <div className="bg-black/80 text-white px-6 py-4 rounded-lg backdrop-blur-sm border-2 border-orange-500/50 max-w-2xl">
+                        <div className="flex items-center space-x-4">
+                          <Icon name="Coffee" size={32} className="text-orange-500" />
+                          <div className="flex-1">
+                            <div className="text-xs text-gray-300 mb-1">ЗАВТРАК С МАКСИМОМ ЗУЕВЫМ • ПРЕМЬЕРА</div>
+                            <div className="font-bold text-lg mb-2">Французские блинчики</div>
+                            <div className="text-sm text-gray-300">
+                              🥞 Сейчас на экране: Максим готовит тесто для блинчиков
                             </div>
-                            <div className="text-4xl font-bold text-orange-500">6</div>
                           </div>
-                          <div className="text-3xl font-bold text-orange-500">:</div>
-                          <div className="text-center">
-                            <div className="flex items-center space-x-2 mb-1">
-                              <div className="w-3 h-3 rounded-full bg-orange-600"></div>
-                              <div className="font-bold text-lg">Рыжие Крутышки</div>
-                            </div>
-                            <div className="text-4xl font-bold text-orange-500">2</div>
+                          <div className="text-center bg-orange-500/20 px-4 py-2 rounded">
+                            <div className="text-xs text-gray-300">В ЭФИРЕ</div>
+                            <div className="text-xl font-bold text-orange-500">28 мин</div>
                           </div>
                         </div>
                       </div>
@@ -439,22 +427,6 @@ const Index = () => {
                         onClick={() => setIsLiveStreaming(false)}
                       >
                         <Icon name="Pause" size={20} />
-                      </Button>
-                      <Button 
-                        variant="secondary" 
-                        className="bg-yellow-500/80 hover:bg-yellow-600 backdrop-blur-sm text-white"
-                        onClick={() => setShowAwardCeremony(true)}
-                      >
-                        <Icon name="Award" size={20} className="mr-2" />
-                        Награждение
-                      </Button>
-                      <Button 
-                        variant="secondary" 
-                        className="bg-orange-500/80 hover:bg-orange-600 backdrop-blur-sm text-white"
-                        onClick={() => setShowCredits(true)}
-                      >
-                        <Icon name="Film" size={20} className="mr-2" />
-                        Титры
                       </Button>
                       <Button 
                         variant="secondary" 
