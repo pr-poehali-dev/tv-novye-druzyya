@@ -245,24 +245,28 @@ const Index = () => {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-between mb-8">
               <h2 className="text-4xl font-bold">Прямой эфир</h2>
-              <Badge className="bg-red-500 text-white animate-pulse px-4 py-2 text-sm">
-                <Icon name="Radio" size={16} className="mr-2" />
-                В ЭФИРЕ
+              <Badge className="bg-orange-500 text-white px-4 py-2 text-sm">
+                <Icon name="Calendar" size={16} className="mr-2" />
+                СУББОТА 8 НОЯБРЯ 13:00
               </Badge>
             </div>
             <Card className="overflow-hidden bg-card border-border">
               <div className="aspect-video bg-black relative">
                 {!isLiveStreaming ? (
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <div className="text-center">
-                      <Icon name="Tv" size={80} className="text-primary mx-auto mb-4" />
-                      <p className="text-xl text-muted-foreground">Прямая трансляция будет доступна здесь</p>
+                    <div className="text-center px-4">
+                      <div className="bg-orange-500/20 rounded-full p-6 inline-block mb-4">
+                        <Icon name="Trophy" size={80} className="text-orange-500 mx-auto" />
+                      </div>
+                      <h3 className="text-3xl font-bold mb-2">Большой футбол: ФИНАЛ</h3>
+                      <p className="text-xl text-muted-foreground mb-2">Суббота, 8 ноября 2025</p>
+                      <p className="text-2xl font-bold text-primary mb-6">13:00 МСК</p>
                       <Button 
-                        className="mt-6 bg-primary hover:bg-primary/90"
+                        className="mt-6 bg-orange-500 hover:bg-orange-600 text-white"
                         onClick={() => setIsLiveStreaming(true)}
                       >
                         <Icon name="Play" size={20} className="mr-2" />
-                        Запустить эфир
+                        Смотреть финал
                       </Button>
                     </div>
                   </div>
@@ -305,18 +309,25 @@ const Index = () => {
                 )}
               </div>
               <CardContent className="p-6">
-                <h3 className="text-2xl font-bold mb-2">Сейчас в эфире: Прайм-тайм шоу</h3>
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-2xl font-bold">Большой футбол: Финальная игра турнира</h3>
+                  <Badge className="bg-orange-500">ФИНАЛ</Badge>
+                </div>
                 <p className="text-muted-foreground mb-4">
-                  Самые интересные темы дня с экспертами и гостями студии. Общаемся, обсуждаем, находим ответы на важные вопросы.
+                  Грандиозный финал реалити-шоу! Две лучшие команды сразятся за главный трофей сезона. Не пропустите решающий матч турнира "Большой футбол" в прямом эфире.
                 </p>
-                <div className="flex items-center space-x-4 text-sm text-muted-foreground">
+                <div className="flex items-center space-x-4 text-sm text-muted-foreground flex-wrap gap-2">
                   <span className="flex items-center">
-                    <Icon name="Clock" size={16} className="mr-1" />
-                    19:00 - 21:00
+                    <Icon name="Calendar" size={16} className="mr-1" />
+                    Суббота, 8 ноября 2025
                   </span>
                   <span className="flex items-center">
-                    <Icon name="Users" size={16} className="mr-1" />
-                    2,543 зрителей
+                    <Icon name="Clock" size={16} className="mr-1" />
+                    13:00 МСК
+                  </span>
+                  <span className="flex items-center">
+                    <Icon name="Timer" size={16} className="mr-1" />
+                    45 минут (матч 20 мин)
                   </span>
                 </div>
               </CardContent>
