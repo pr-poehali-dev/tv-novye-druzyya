@@ -9,7 +9,6 @@ const Index = () => {
   const [isLiveStreaming, setIsLiveStreaming] = useState(false);
   const [showCredits, setShowCredits] = useState(false);
   const [showAwardCeremony, setShowAwardCeremony] = useState(false);
-  const [currentLiveShow, setCurrentLiveShow] = useState('football');
 
   const episodes = [
     {
@@ -99,7 +98,6 @@ const Index = () => {
     { time: '10:00', program: 'Завтрак с Максимом Зуевым: Французский завтрак', duration: '1 час', highlight: true, isPremiere: true },
     { time: '11:00', program: 'Новости', duration: '30 мин' },
     { time: '11:30', program: 'Документальный фильм', duration: '1 час' },
-    { time: '13:00', program: 'Большой футбол: Финал', duration: '45 мин', highlight: true },
     { time: '14:00', program: 'Ток-шоу "Диалог"', duration: '1 час' },
     { time: '16:00', program: 'Культурный код', duration: '1 час' },
     { time: '18:00', program: 'Вечерние новости', duration: '45 мин' },
@@ -211,10 +209,7 @@ const Index = () => {
                   <Button 
                     size="lg" 
                     className="bg-orange-500 hover:bg-orange-600 text-white text-lg"
-                    onClick={() => {
-                      setCurrentLiveShow('breakfast');
-                      scrollToSection('live');
-                    }}
+                    onClick={() => scrollToSection('live')}
                   >
                     <Icon name="Play" size={24} className="mr-2" />
                     Смотреть премьеру
@@ -327,7 +322,7 @@ const Index = () => {
               <h2 className="text-4xl font-bold">Прямой эфир</h2>
               <Badge className="bg-orange-500 text-white px-4 py-2 text-sm">
                 <Icon name="Calendar" size={16} className="mr-2" />
-                СУББОТА 8 НОЯБРЯ 13:00
+                СУББОТА 1 НОЯБРЯ 10:00
               </Badge>
             </div>
             <Card className="overflow-hidden bg-card border-border">
@@ -335,63 +330,27 @@ const Index = () => {
                 {!isLiveStreaming ? (
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                     <div className="text-center px-4">
-                      <div className="flex gap-4 mb-6 justify-center">
-                        <Button
-                          variant={currentLiveShow === 'breakfast' ? 'default' : 'outline'}
-                          onClick={() => setCurrentLiveShow('breakfast')}
-                          className="flex-col h-auto py-4"
-                        >
-                          <Icon name="Coffee" size={40} className="mb-2" />
-                          <span className="text-sm">Завтрак с Максимом</span>
-                          <span className="text-xs text-muted-foreground">10:00</span>
-                        </Button>
-                        <Button
-                          variant={currentLiveShow === 'football' ? 'default' : 'outline'}
-                          onClick={() => setCurrentLiveShow('football')}
-                          className="flex-col h-auto py-4"
-                        >
-                          <Icon name="Trophy" size={40} className="mb-2" />
-                          <span className="text-sm">Большой футбол</span>
-                          <span className="text-xs text-muted-foreground">13:00</span>
-                        </Button>
+                      <div className="bg-orange-500/20 rounded-full p-6 inline-block mb-4">
+                        <Icon name="Coffee" size={80} className="text-orange-500 mx-auto" />
                       </div>
-                      {currentLiveShow === 'football' ? (
-                        <>
-                          <div className="bg-orange-500/20 rounded-full p-6 inline-block mb-4">
-                            <Icon name="Trophy" size={80} className="text-orange-500 mx-auto" />
-                          </div>
-                          <h3 className="text-3xl font-bold mb-2">Большой футбол: ФИНАЛ</h3>
-                          <p className="text-xl text-muted-foreground mb-2">Суббота, 8 ноября 2025</p>
-                          <p className="text-2xl font-bold text-primary mb-6">13:00 МСК</p>
-                        </>
-                      ) : (
-                        <>
-                          <div className="bg-orange-500/20 rounded-full p-6 inline-block mb-4">
-                            <Icon name="Coffee" size={80} className="text-orange-500 mx-auto" />
-                          </div>
-                          <h3 className="text-3xl font-bold mb-2">Завтрак с Максимом Зуевым</h3>
-                          <p className="text-xl text-muted-foreground mb-2">Суббота, 1 ноября 2025</p>
-                          <p className="text-2xl font-bold text-primary mb-6">10:00 МСК</p>
-                          <Badge className="bg-red-500 text-white mb-4">ПРЕМЬЕРА</Badge>
-                        </>
-                      )}
+                      <h3 className="text-3xl font-bold mb-2">Завтрак с Максимом Зуевым</h3>
+                      <p className="text-xl text-muted-foreground mb-2">Суббота, 1 ноября 2025</p>
+                      <p className="text-2xl font-bold text-primary mb-6">10:00 МСК</p>
+                      <Badge className="bg-red-500 text-white mb-4">ПРЕМЬЕРА</Badge>
                       <Button 
                         className="mt-6 bg-orange-500 hover:bg-orange-600 text-white"
                         onClick={() => setIsLiveStreaming(true)}
                       >
                         <Icon name="Play" size={20} className="mr-2" />
-                        {currentLiveShow === 'football' ? 'Смотреть финал' : 'Смотреть премьеру'}
+                        Смотреть премьеру
                       </Button>
                     </div>
                   </div>
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center animate-fade-in">
                     <img
-                      src={currentLiveShow === 'football' 
-                        ? 'https://cdn.poehali.dev/files/adebf983-eabd-4647-9dce-6a7d08c84498.jpg'
-                        : 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6643130c-d232-4352-a3ae-eb579c0ae313.jpg'
-                      }
-                      alt={currentLiveShow === 'football' ? 'Прямой эфир - Большой футбол финал' : 'Прямой эфир - Завтрак с Максимом'}
+                      src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6643130c-d232-4352-a3ae-eb579c0ae313.jpg"
+                      alt="Прямой эфир - Завтрак с Максимом"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-4 left-4 flex items-center space-x-3">
@@ -408,9 +367,7 @@ const Index = () => {
                     <div className="absolute top-4 right-4 bg-black/70 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
                       <div className="flex items-center space-x-2">
                         <Icon name="Camera" size={20} className="text-orange-500" />
-                        <span className="text-sm font-medium">
-                          {currentLiveShow === 'football' ? 'Камера 1 • Главный обзор' : 'Камера 1 • Кухня'}
-                        </span>
+                        <span className="text-sm font-medium">Камера 1 • Кухня</span>
                       </div>
                     </div>
                     <div className="absolute bottom-20 left-4 right-4 flex justify-between items-center">
@@ -702,59 +659,31 @@ const Index = () => {
                 )}
               </div>
               <CardContent className="p-6">
-                {currentLiveShow === 'football' ? (
-                  <>
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-2xl font-bold">Большой футбол: Финальная игра турнира</h3>
-                      <Badge className="bg-orange-500">ФИНАЛ</Badge>
-                    </div>
-                    <p className="text-muted-foreground mb-4">
-                      Грандиозный финал реалити-шоу! Две лучшие команды сразятся за главный трофей сезона. Не пропустите решающий матч турнира "Большой футбол" в прямом эфире.
-                    </p>
-                    <div className="flex items-center space-x-4 text-sm text-muted-foreground flex-wrap gap-2">
-                      <span className="flex items-center">
-                        <Icon name="Calendar" size={16} className="mr-1" />
-                        Суббота, 8 ноября 2025
-                      </span>
-                      <span className="flex items-center">
-                        <Icon name="Clock" size={16} className="mr-1" />
-                        13:00 МСК
-                      </span>
-                      <span className="flex items-center">
-                        <Icon name="Timer" size={16} className="mr-1" />
-                        45 минут (матч 20 мин)
-                      </span>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="flex items-center justify-between mb-3">
-                      <h3 className="text-2xl font-bold">Завтрак с Максимом Зуевым: Французские блинчики</h3>
-                      <Badge className="bg-red-500">ПРЕМЬЕРА</Badge>
-                    </div>
-                    <p className="text-muted-foreground mb-4">
-                      Ведущий Максим Зуев готовит французские блинчики со сливочным маслом и красной икрой, а также с кленовым соусом. Премьерный выпуск нового кулинарного шоу!
-                    </p>
-                    <div className="flex items-center space-x-4 text-sm text-muted-foreground flex-wrap gap-2">
-                      <span className="flex items-center">
-                        <Icon name="Calendar" size={16} className="mr-1" />
-                        Суббота, 1 ноября 2025
-                      </span>
-                      <span className="flex items-center">
-                        <Icon name="Clock" size={16} className="mr-1" />
-                        10:00 МСК
-                      </span>
-                      <span className="flex items-center">
-                        <Icon name="Timer" size={16} className="mr-1" />
-                        60 минут
-                      </span>
-                      <span className="flex items-center">
-                        <Icon name="ChefHat" size={16} className="mr-1" />
-                        Максим Зуев
-                      </span>
-                    </div>
-                  </>
-                )}
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-2xl font-bold">Завтрак с Максимом Зуевым: Французские блинчики</h3>
+                  <Badge className="bg-red-500">ПРЕМЬЕРА</Badge>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Ведущий Максим Зуев готовит французские блинчики со сливочным маслом и красной икрой, а также с кленовым соусом. Премьерный выпуск нового кулинарного шоу!
+                </p>
+                <div className="flex items-center space-x-4 text-sm text-muted-foreground flex-wrap gap-2">
+                  <span className="flex items-center">
+                    <Icon name="Calendar" size={16} className="mr-1" />
+                    Суббота, 1 ноября 2025
+                  </span>
+                  <span className="flex items-center">
+                    <Icon name="Clock" size={16} className="mr-1" />
+                    10:00 МСК
+                  </span>
+                  <span className="flex items-center">
+                    <Icon name="Timer" size={16} className="mr-1" />
+                    60 минут
+                  </span>
+                  <span className="flex items-center">
+                    <Icon name="ChefHat" size={16} className="mr-1" />
+                    Максим Зуев
+                  </span>
+                </div>
               </CardContent>
             </Card>
           </div>
