@@ -14,11 +14,12 @@ const Index = () => {
   const episodes = [
     {
       id: 0,
-      title: 'Завтрак с Максимом Зуевым: Французский завтрак',
+      title: 'Завтрак с Максимом Зуевым: Французские блинчики',
       date: '1 ноября 2025',
       duration: '60 мин',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6643130c-d232-4352-a3ae-eb579c0ae313.jpg',
-      category: 'Кулинарное шоу'
+      category: 'Кулинарное шоу',
+      description: 'Ведущий Максим Зуев готовит французские блинчики со сливочным маслом и красной икрой, а также с кленовым соусом. Суббота, 10:00 утра.'
     },
     {
       id: 1,
@@ -649,27 +650,59 @@ const Index = () => {
                 )}
               </div>
               <CardContent className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <h3 className="text-2xl font-bold">Большой футбол: Финальная игра турнира</h3>
-                  <Badge className="bg-orange-500">ФИНАЛ</Badge>
-                </div>
-                <p className="text-muted-foreground mb-4">
-                  Грандиозный финал реалити-шоу! Две лучшие команды сразятся за главный трофей сезона. Не пропустите решающий матч турнира "Большой футбол" в прямом эфире.
-                </p>
-                <div className="flex items-center space-x-4 text-sm text-muted-foreground flex-wrap gap-2">
-                  <span className="flex items-center">
-                    <Icon name="Calendar" size={16} className="mr-1" />
-                    Суббота, 8 ноября 2025
-                  </span>
-                  <span className="flex items-center">
-                    <Icon name="Clock" size={16} className="mr-1" />
-                    13:00 МСК
-                  </span>
-                  <span className="flex items-center">
-                    <Icon name="Timer" size={16} className="mr-1" />
-                    45 минут (матч 20 мин)
-                  </span>
-                </div>
+                {currentLiveShow === 'football' ? (
+                  <>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-2xl font-bold">Большой футбол: Финальная игра турнира</h3>
+                      <Badge className="bg-orange-500">ФИНАЛ</Badge>
+                    </div>
+                    <p className="text-muted-foreground mb-4">
+                      Грандиозный финал реалити-шоу! Две лучшие команды сразятся за главный трофей сезона. Не пропустите решающий матч турнира "Большой футбол" в прямом эфире.
+                    </p>
+                    <div className="flex items-center space-x-4 text-sm text-muted-foreground flex-wrap gap-2">
+                      <span className="flex items-center">
+                        <Icon name="Calendar" size={16} className="mr-1" />
+                        Суббота, 8 ноября 2025
+                      </span>
+                      <span className="flex items-center">
+                        <Icon name="Clock" size={16} className="mr-1" />
+                        13:00 МСК
+                      </span>
+                      <span className="flex items-center">
+                        <Icon name="Timer" size={16} className="mr-1" />
+                        45 минут (матч 20 мин)
+                      </span>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex items-center justify-between mb-3">
+                      <h3 className="text-2xl font-bold">Завтрак с Максимом Зуевым: Французские блинчики</h3>
+                      <Badge className="bg-red-500">ПРЕМЬЕРА</Badge>
+                    </div>
+                    <p className="text-muted-foreground mb-4">
+                      Ведущий Максим Зуев готовит французские блинчики со сливочным маслом и красной икрой, а также с кленовым соусом. Премьерный выпуск нового кулинарного шоу!
+                    </p>
+                    <div className="flex items-center space-x-4 text-sm text-muted-foreground flex-wrap gap-2">
+                      <span className="flex items-center">
+                        <Icon name="Calendar" size={16} className="mr-1" />
+                        Суббота, 1 ноября 2025
+                      </span>
+                      <span className="flex items-center">
+                        <Icon name="Clock" size={16} className="mr-1" />
+                        10:00 МСК
+                      </span>
+                      <span className="flex items-center">
+                        <Icon name="Timer" size={16} className="mr-1" />
+                        60 минут
+                      </span>
+                      <span className="flex items-center">
+                        <Icon name="ChefHat" size={16} className="mr-1" />
+                        Максим Зуев
+                      </span>
+                    </div>
+                  </>
+                )}
               </CardContent>
             </Card>
           </div>
