@@ -430,6 +430,14 @@ const Index = () => {
                       </Button>
                       <Button 
                         variant="secondary" 
+                        className="bg-orange-500/80 hover:bg-orange-600 backdrop-blur-sm text-white"
+                        onClick={() => setShowCredits(true)}
+                      >
+                        <Icon name="Film" size={20} className="mr-2" />
+                        Титры
+                      </Button>
+                      <Button 
+                        variant="secondary" 
                         size="icon"
                         className="bg-black/50 hover:bg-black/70 backdrop-blur-sm"
                       >
@@ -451,74 +459,76 @@ const Index = () => {
                         <div className="w-full max-w-3xl px-8 animate-credits-scroll">
                           <div className="space-y-8 text-center text-white">
                             <div className="mb-12">
-                              <Icon name="Trophy" size={80} className="text-orange-500 mx-auto mb-4" />
-                              <h2 className="text-5xl font-bold mb-2">БОЛЬШОЙ ФУТБОЛ</h2>
-                              <p className="text-2xl text-orange-500">Сезон 1 • Финал</p>
+                              <Icon name="Coffee" size={80} className="text-orange-500 mx-auto mb-4" />
+                              <h2 className="text-5xl font-bold mb-2">ЗАВТРАК С МАКСИМОМ ЗУЕВЫМ</h2>
+                              <p className="text-2xl text-orange-500">Премьера • Французские блинчики</p>
                             </div>
 
                             <div className="space-y-2 mb-8">
                               <p className="text-xl text-gray-400">Премьера</p>
-                              <p className="text-2xl font-bold">12 октября 2025</p>
-                              <p className="text-xl text-gray-400">Финал</p>
-                              <p className="text-2xl font-bold">8 ноября 2025 • 13:00 МСК</p>
+                              <p className="text-2xl font-bold">1 ноября 2025 • Суббота</p>
+                              <p className="text-xl text-gray-400">Время выхода</p>
+                              <p className="text-2xl font-bold">10:00 - 12:01 МСК</p>
                             </div>
 
                             <div className="border-t border-gray-700 pt-8 space-y-6">
                               <div>
-                                <p className="text-gray-400 text-sm mb-2">РЕЖИССЁР-ПОСТАНОВЩИК</p>
-                                <p className="text-xl font-semibold">Александр Кинорежев</p>
+                                <p className="text-gray-400 text-sm mb-2">ВЕДУЩИЙ</p>
+                                <p className="text-3xl font-bold text-orange-500">Максим Зуев, 9 лет</p>
                               </div>
 
                               <div>
-                                <p className="text-gray-400 text-sm mb-2">ОПЕРАТОР-ПОСТАНОВЩИК</p>
-                                <p className="text-xl font-semibold">Мария Камерова</p>
+                                <p className="text-gray-400 text-sm mb-2">РЕЖИССЁР</p>
+                                <p className="text-xl font-semibold">Анна Кулинарова</p>
                               </div>
 
                               <div>
                                 <p className="text-gray-400 text-sm mb-2">ПРОДЮСЕР</p>
-                                <p className="text-xl font-semibold">Игорь Продюсеров</p>
+                                <p className="text-xl font-semibold">Сергей Вкусов</p>
                               </div>
 
                               <div>
-                                <p className="text-gray-400 text-sm mb-2">ОПЕРАТОРЫ</p>
-                                <p className="text-lg">Дмитрий Зуммер • Елена Фокусова • Сергей Планов</p>
-                              </div>
-
-                              <div>
-                                <p className="text-gray-400 text-sm mb-2">МОНТАЖ</p>
-                                <p className="text-lg">Анна Монтажникова • Павел Склейкин</p>
+                                <p className="text-gray-400 text-sm mb-2">ОПЕРАТОР</p>
+                                <p className="text-lg">Дмитрий Камеров</p>
                               </div>
 
                               <div>
                                 <p className="text-gray-400 text-sm mb-2">ЗВУКОРЕЖИССЁР</p>
-                                <p className="text-lg">Виктор Микрофонов</p>
+                                <p className="text-lg">Елена Звукова</p>
                               </div>
 
                               <div>
-                                <p className="text-gray-400 text-sm mb-2">ВЕДУЩИЕ ШОУ</p>
-                                <p className="text-2xl font-bold">Котик • Бубуко</p>
+                                <p className="text-gray-400 text-sm mb-2">МОНТАЖ</p>
+                                <p className="text-lg">Павел Монтажников</p>
                               </div>
 
                               <div>
-                                <p className="text-gray-400 text-sm mb-2">ХУДОЖНИК-ПОСТАНОВЩИК</p>
+                                <p className="text-gray-400 text-sm mb-2">ХУДОЖНИК-ДЕКОРАТОР</p>
                                 <p className="text-lg">Ольга Декорова</p>
                               </div>
 
                               <div>
-                                <p className="text-gray-400 text-sm mb-2">ДИРЕКТОР ПРОЕКТА</p>
-                                <p className="text-lg">Светлана Управленцева</p>
+                                <p className="text-gray-400 text-sm mb-2">КОНСУЛЬТАНТ ПО КУЛИНАРИИ</p>
+                                <p className="text-lg">Виктор Шеф-Поваров</p>
                               </div>
                             </div>
 
                             <div className="border-t border-gray-700 pt-8 mt-8">
-                              <div className="flex items-center justify-center space-x-3 mb-4">
+                              <div className="flex items-center justify-center space-x-3 mb-6">
                                 <Icon name="Tv" size={48} className="text-primary" />
                                 <div className="text-left">
                                   <p className="text-3xl font-bold">Новые друзья ТВ</p>
-                                  <p className="text-gray-400">Грандиозное реалити каждые выходные</p>
+                                  <p className="text-gray-400">Кулинарное шоу каждую субботу</p>
                                 </div>
                               </div>
-                              <p className="text-sm text-gray-500 mt-6">© 2025 Новые друзья ТВ. Все права защищены.</p>
+                              
+                              <div className="border-t border-gray-700 pt-6 mt-6 space-y-3">
+                                <p className="text-lg text-gray-300">Производство:</p>
+                                <p className="text-2xl font-bold text-orange-500">ООО «Почтальон Медиа»</p>
+                                <p className="text-lg text-gray-300 mt-4">По заказу:</p>
+                                <p className="text-2xl font-bold">Телеканал «Новые друзья ТВ»</p>
+                                <p className="text-sm text-gray-500 mt-8">© 2025 ООО «Почтальон Медиа». Все права защищены.</p>
+                              </div>
                             </div>
                           </div>
                         </div>
