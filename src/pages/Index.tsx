@@ -15,6 +15,15 @@ const Index = () => {
   const episodes = [
     {
       id: 0,
+      title: 'Travel Show Поехали. Сезон 4, Эпизод 1: Баку',
+      date: '27 октября 2025',
+      duration: '45 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/0a358a16-097c-4755-a501-af08a19c9e90.jpg',
+      category: 'Travel Show',
+      description: 'Ведущий Максим Зуев отправляется в столицу Азербайджана - город Баку. Знакомство с современной архитектурой, старым городом и культурой страны огней.'
+    },
+    {
+      id: 1,
       title: 'Завтрак с Максимом Зуевым: Французские блинчики',
       date: '1 ноября 2025',
       duration: '2 часа 1 мин',
