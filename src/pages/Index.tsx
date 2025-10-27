@@ -13,8 +13,8 @@ const Index = () => {
   const episodes = [
     {
       id: 0,
-      title: 'Завтрак с Максимом Зуевым: Французский',
-      date: '8 ноября 2025',
+      title: 'Завтрак с Максимом Зуевым: Французский завтрак',
+      date: '1 ноября 2025',
       duration: '60 мин',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6643130c-d232-4352-a3ae-eb579c0ae313.jpg',
       category: 'Кулинарное шоу'
@@ -94,7 +94,7 @@ const Index = () => {
   ];
 
   const schedule = [
-    { time: '10:00', program: 'Завтрак с Максимом: Французский', duration: '1 час', highlight: true },
+    { time: '10:00', program: 'Завтрак с Максимом Зуевым: Французский завтрак', duration: '1 час', highlight: true, isPremiere: true },
     { time: '11:00', program: 'Новости', duration: '30 мин' },
     { time: '11:30', program: 'Документальный фильм', duration: '1 час' },
     { time: '13:00', program: 'Большой футбол: Финал', duration: '45 мин', highlight: true },
@@ -244,8 +244,16 @@ const Index = () => {
                       />
                     </div>
                     <div>
-                      <h3 className="font-semibold text-lg">{item.program}</h3>
+                      <div className="flex items-center gap-2 mb-1">
+                        <h3 className="font-semibold text-lg">{item.program}</h3>
+                        {item.isPremiere && (
+                          <Badge className="bg-red-500 text-white text-xs">ПРЕМЬЕРА</Badge>
+                        )}
+                      </div>
                       <p className="text-sm text-muted-foreground">{item.duration}</p>
+                      {item.isPremiere && (
+                        <p className="text-xs text-orange-500 font-medium mt-1">Каждую субботу в 10:00</p>
+                      )}
                     </div>
                   </div>
                   <div className={`text-2xl font-bold ${item.highlight ? 'text-orange-500' : 'text-primary'}`}>
