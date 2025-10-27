@@ -16,10 +16,10 @@ const Index = () => {
       id: 0,
       title: 'Завтрак с Максимом Зуевым: Французские блинчики',
       date: '1 ноября 2025',
-      duration: '60 мин',
+      duration: '2 часа 1 мин',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6643130c-d232-4352-a3ae-eb579c0ae313.jpg',
       category: 'Кулинарное шоу',
-      description: 'Ведущий Максим Зуев готовит французские блинчики со сливочным маслом и красной икрой, а также с кленовым соусом. Суббота, 10:00 утра.'
+      description: 'Ведущий Максим Зуев готовит французские блинчики со сливочным маслом и красной икрой, а также с кленовым соусом. Суббота, 10:00-12:01.'
     },
     {
       id: 1,
@@ -96,9 +96,9 @@ const Index = () => {
   ];
 
   const schedule = [
-    { time: '10:00', program: 'Завтрак с Максимом Зуевым: Французский завтрак', duration: '1 час', highlight: true, isPremiere: true },
-    { time: '11:00', program: 'Новости', duration: '30 мин' },
-    { time: '11:30', program: 'Документальный фильм', duration: '1 час' },
+    { time: '10:00', program: 'Завтрак с Максимом Зуевым: Французский завтрак', duration: '2 часа 1 мин (до 12:01)', highlight: true, isPremiere: true },
+    { time: '12:30', program: 'Документальный фильм', duration: '1 час' },
+    { time: '13:30', program: 'Новости', duration: '30 мин' },
     { time: '14:00', program: 'Ток-шоу "Диалог"', duration: '1 час' },
     { time: '16:00', program: 'Культурный код', duration: '1 час' },
     { time: '18:00', program: 'Вечерние новости', duration: '45 мин' },
@@ -406,8 +406,8 @@ const Index = () => {
                             </div>
                           </div>
                           <div className="text-center bg-orange-500/20 px-4 py-2 rounded">
-                            <div className="text-xs text-gray-300">В ЭФИРЕ</div>
-                            <div className="text-xl font-bold text-orange-500">28 мин</div>
+                            <div className="text-xs text-gray-300">ОКОНЧАНИЕ</div>
+                            <div className="text-xl font-bold text-orange-500">12:01</div>
                           </div>
                         </div>
                       </div>
@@ -673,7 +673,7 @@ const Index = () => {
                   </span>
                   <span className="flex items-center">
                     <Icon name="Timer" size={16} className="mr-1" />
-                    60 минут
+                    2 часа 1 мин (до 12:01)
                   </span>
                   <span className="flex items-center">
                     <Icon name="ChefHat" size={16} className="mr-1" />
