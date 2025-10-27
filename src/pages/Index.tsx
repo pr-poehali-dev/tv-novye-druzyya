@@ -10,6 +10,7 @@ const Index = () => {
   const [showCredits, setShowCredits] = useState(false);
   const [showAwardCeremony, setShowAwardCeremony] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
+  const [selectedEpisode, setSelectedEpisode] = useState<number | null>(null);
 
   const episodes = [
     {
@@ -237,6 +238,7 @@ const Index = () => {
                 key={episode.id}
                 className="group overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer animate-fade-in border-border bg-card"
                 style={{ animationDelay: `${index * 100}ms` }}
+                onClick={() => setSelectedEpisode(episode.id)}
               >
                 <div className="relative overflow-hidden">
                   <img
@@ -271,6 +273,68 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {selectedEpisode !== null && (
+        <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+          <div className="w-full max-w-6xl bg-card rounded-xl overflow-hidden">
+            <div className="relative">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="absolute top-4 right-4 z-10 text-white hover:bg-white/20"
+                onClick={() => setSelectedEpisode(null)}
+              >
+                <Icon name="X" size={24} />
+              </Button>
+              <div className="aspect-video bg-black relative">
+                <img
+                  src={episodes[selectedEpisode].image}
+                  alt={episodes[selectedEpisode].title}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="bg-primary rounded-full p-8 cursor-pointer hover:scale-110 transition-transform">
+                    <Icon name="Play" size={64} className="text-white" />
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4">
+                  <Badge className="bg-primary text-primary-foreground text-lg px-4 py-2">
+                    {episodes[selectedEpisode].category}
+                  </Badge>
+                </div>
+              </div>
+              <div className="p-8">
+                <h2 className="text-3xl font-bold mb-4">{episodes[selectedEpisode].title}</h2>
+                <div className="flex items-center space-x-6 text-muted-foreground mb-6">
+                  <span className="flex items-center">
+                    <Icon name="Calendar" size={20} className="mr-2" />
+                    {episodes[selectedEpisode].date}
+                  </span>
+                  <span className="flex items-center">
+                    <Icon name="Clock" size={20} className="mr-2" />
+                    {episodes[selectedEpisode].duration}
+                  </span>
+                </div>
+                {episodes[selectedEpisode].description && (
+                  <p className="text-lg text-muted-foreground mb-6">
+                    {episodes[selectedEpisode].description}
+                  </p>
+                )}
+                <div className="flex space-x-4">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90">
+                    <Icon name="Play" size={20} className="mr-2" />
+                    Смотреть выпуск
+                  </Button>
+                  <Button size="lg" variant="outline">
+                    <Icon name="Share2" size={20} className="mr-2" />
+                    Поделиться
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       <section id="schedule" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto">
@@ -523,11 +587,19 @@ const Index = () => {
                               </div>
                               
                               <div className="border-t border-gray-700 pt-6 mt-6 space-y-3">
-                                <p className="text-lg text-gray-300">Производство:</p>
-                                <p className="text-2xl font-bold text-orange-500">ООО «Почтальон Медиа»</p>
-                                <p className="text-lg text-gray-300 mt-4">По заказу:</p>
-                                <p className="text-2xl font-bold">Телеканал «Новые друзья ТВ»</p>
-                                <p className="text-sm text-gray-500 mt-8">© 2025 ООО «Почтальон Медиа». Все права защищены.</p>
+                                <div className="flex items-center justify-center mb-4">
+                                  <Icon name="Music" size={40} className="text-orange-500 animate-pulse" />
+                                </div>
+                                <p className="text-sm text-gray-400 italic">♫ Музыкальная тема программы ♫</p>
+                                <p className="text-lg text-gray-300">Композитор: Игорь Музыкантов</p>
+                                
+                                <div className="border-t border-gray-700 pt-6 mt-6 space-y-3">
+                                  <p className="text-lg text-gray-300">Производство:</p>
+                                  <p className="text-2xl font-bold text-orange-500">ООО «Почтальон Медиа»</p>
+                                  <p className="text-lg text-gray-300 mt-4">По заказу:</p>
+                                  <p className="text-2xl font-bold">Телеканал «Новые друзья ТВ»</p>
+                                  <p className="text-sm text-gray-500 mt-8">© 2025 ООО «Почтальон Медиа». Все права защищены.</p>
+                                </div>
                               </div>
                             </div>
                           </div>
