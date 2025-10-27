@@ -13,7 +13,7 @@ const Index = () => {
   const episodes = [
     {
       id: 0,
-      title: 'Завтрак с Максимом: Французский',
+      title: 'Завтрак с Максимом Зуевым: Французский',
       date: '8 ноября 2025',
       duration: '60 мин',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6643130c-d232-4352-a3ae-eb579c0ae313.jpg',
