@@ -291,7 +291,7 @@ const Index = () => {
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center animate-fade-in">
                     <img
-                      src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/68a4c642-ebca-49b8-8e54-c9677354e154.jpg"
+                      src="https://cdn.poehali.dev/files/adebf983-eabd-4647-9dce-6a7d08c84498.jpg"
                       alt="Прямой эфир - Большой футбол финал"
                       className="w-full h-full object-cover"
                     />
