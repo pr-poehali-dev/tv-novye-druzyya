@@ -294,12 +294,31 @@ const Index = () => {
                         <span className="text-sm font-medium">Камера 1 • Главный обзор</span>
                       </div>
                     </div>
-                    <div className="absolute bottom-20 left-4 bg-black/70 text-white px-4 py-3 rounded-lg backdrop-blur-sm">
-                      <div className="flex items-center space-x-3">
-                        <Icon name="Trophy" size={24} className="text-orange-500" />
-                        <div>
-                          <div className="text-xs text-gray-300">БОЛЬШОЙ ФУТБОЛ</div>
-                          <div className="font-bold">ФИНАЛЬНАЯ ИГРА</div>
+                    <div className="absolute bottom-20 left-4 right-4 flex justify-between items-center">
+                      <div className="bg-black/70 text-white px-4 py-3 rounded-lg backdrop-blur-sm">
+                        <div className="flex items-center space-x-3">
+                          <Icon name="Trophy" size={24} className="text-orange-500" />
+                          <div>
+                            <div className="text-xs text-gray-300">БОЛЬШОЙ ФУТБОЛ • СЕЗОН 1</div>
+                            <div className="font-bold">ФИНАЛЬНАЯ ИГРА</div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="bg-black/80 text-white px-6 py-4 rounded-lg backdrop-blur-sm border-2 border-orange-500/50">
+                        <div className="flex items-center space-x-6">
+                          <div className="text-center">
+                            <div className="flex items-center space-x-2 mb-1">
+                              <div className="w-3 h-3 rounded-full bg-pink-500"></div>
+                              <div className="font-bold text-lg">Малиновые Цветочки</div>
+                            </div>
+                          </div>
+                          <div className="text-3xl font-bold text-orange-500">VS</div>
+                          <div className="text-center">
+                            <div className="flex items-center space-x-2 mb-1">
+                              <div className="w-3 h-3 rounded-full bg-orange-600"></div>
+                              <div className="font-bold text-lg">Рыжие Крутышки</div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
