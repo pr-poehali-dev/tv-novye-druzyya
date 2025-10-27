@@ -7,6 +7,7 @@ import Icon from '@/components/ui/icon';
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isLiveStreaming, setIsLiveStreaming] = useState(false);
+  const [showCredits, setShowCredits] = useState(false);
 
   const episodes = [
     {
@@ -340,12 +341,108 @@ const Index = () => {
                       </Button>
                       <Button 
                         variant="secondary" 
+                        className="bg-orange-500/80 hover:bg-orange-600 backdrop-blur-sm text-white"
+                        onClick={() => setShowCredits(true)}
+                      >
+                        <Icon name="Film" size={20} className="mr-2" />
+                        Титры
+                      </Button>
+                      <Button 
+                        variant="secondary" 
                         size="icon"
                         className="bg-black/50 hover:bg-black/70 backdrop-blur-sm"
                       >
                         <Icon name="Maximize" size={20} />
                       </Button>
                     </div>
+                    {showCredits && (
+                      <div className="absolute inset-0 bg-black flex items-center justify-center overflow-hidden z-10">
+                        <div className="absolute top-4 right-4">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="text-white hover:bg-white/20"
+                            onClick={() => setShowCredits(false)}
+                          >
+                            <Icon name="X" size={24} />
+                          </Button>
+                        </div>
+                        <div className="w-full max-w-3xl px-8 animate-fade-in">
+                          <div className="space-y-8 text-center text-white">
+                            <div className="mb-12">
+                              <Icon name="Trophy" size={80} className="text-orange-500 mx-auto mb-4" />
+                              <h2 className="text-5xl font-bold mb-2">БОЛЬШОЙ ФУТБОЛ</h2>
+                              <p className="text-2xl text-orange-500">Сезон 1 • Финал</p>
+                            </div>
+
+                            <div className="space-y-2 mb-8">
+                              <p className="text-xl text-gray-400">Премьера</p>
+                              <p className="text-2xl font-bold">12 октября 2025</p>
+                              <p className="text-xl text-gray-400">Финал</p>
+                              <p className="text-2xl font-bold">8 ноября 2025 • 13:00 МСК</p>
+                            </div>
+
+                            <div className="border-t border-gray-700 pt-8 space-y-6">
+                              <div>
+                                <p className="text-gray-400 text-sm mb-2">РЕЖИССЁР-ПОСТАНОВЩИК</p>
+                                <p className="text-xl font-semibold">Александр Кинорежев</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 text-sm mb-2">ОПЕРАТОР-ПОСТАНОВЩИК</p>
+                                <p className="text-xl font-semibold">Мария Камерова</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 text-sm mb-2">ПРОДЮСЕР</p>
+                                <p className="text-xl font-semibold">Игорь Продюсеров</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 text-sm mb-2">ОПЕРАТОРЫ</p>
+                                <p className="text-lg">Дмитрий Зуммер • Елена Фокусова • Сергей Планов</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 text-sm mb-2">МОНТАЖ</p>
+                                <p className="text-lg">Анна Монтажникова • Павел Склейкин</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 text-sm mb-2">ЗВУКОРЕЖИССЁР</p>
+                                <p className="text-lg">Виктор Микрофонов</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 text-sm mb-2">ВЕДУЩИЙ</p>
+                                <p className="text-xl font-semibold">Максим Комментаторов</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 text-sm mb-2">ХУДОЖНИК-ПОСТАНОВЩИК</p>
+                                <p className="text-lg">Ольга Декорова</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 text-sm mb-2">ДИРЕКТОР ПРОЕКТА</p>
+                                <p className="text-lg">Светлана Управленцева</p>
+                              </div>
+                            </div>
+
+                            <div className="border-t border-gray-700 pt-8 mt-8">
+                              <div className="flex items-center justify-center space-x-3 mb-4">
+                                <Icon name="Tv" size={48} className="text-primary" />
+                                <div className="text-left">
+                                  <p className="text-3xl font-bold">Новые друзья ТВ</p>
+                                  <p className="text-gray-400">Грандиозное реалити каждые выходные</p>
+                                </div>
+                              </div>
+                              <p className="text-sm text-gray-500 mt-6">© 2025 Новые друзья ТВ. Все права защищены.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
