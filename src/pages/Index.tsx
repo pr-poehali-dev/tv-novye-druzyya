@@ -171,6 +171,58 @@ const Index = () => {
               </div>
             </div>
           </div>
+
+          <div className="mt-12">
+            <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl overflow-hidden border-2 border-orange-500/50 shadow-2xl">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-[400px] md:h-auto">
+                  <img
+                    src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/0f78df40-13ee-485c-aa81-cab7ca72057e.jpg"
+                    alt="Завтрак с Максимом Зуевым"
+                    className="w-full h-full object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-red-500 text-white text-lg px-4 py-2 animate-pulse">
+                    ПРЕМЬЕРА
+                  </Badge>
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Icon name="Coffee" size={32} className="text-orange-500" />
+                    <Badge variant="outline" className="text-sm">Новое шоу</Badge>
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4">Завтрак с Максимом Зуевым</h3>
+                  <p className="text-xl text-muted-foreground mb-6">
+                    Премьерный выпуск! Максим Зуев готовит французские блинчики со сливочным маслом, красной икрой и кленовым соусом.
+                  </p>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3 text-lg">
+                      <Icon name="Calendar" size={20} className="text-orange-500" />
+                      <span className="font-semibold">Суббота, 1 ноября 2025</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg">
+                      <Icon name="Clock" size={20} className="text-orange-500" />
+                      <span className="font-semibold">10:00 МСК</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg">
+                      <Icon name="ChefHat" size={20} className="text-orange-500" />
+                      <span>Ведущий: Максим Зуев</span>
+                    </div>
+                  </div>
+                  <Button 
+                    size="lg" 
+                    className="bg-orange-500 hover:bg-orange-600 text-white text-lg"
+                    onClick={() => {
+                      setCurrentLiveShow('breakfast');
+                      scrollToSection('live');
+                    }}
+                  >
+                    <Icon name="Play" size={24} className="mr-2" />
+                    Смотреть премьеру
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
