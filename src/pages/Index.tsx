@@ -9,6 +9,7 @@ const Index = () => {
   const [isLiveStreaming, setIsLiveStreaming] = useState(false);
   const [showCredits, setShowCredits] = useState(false);
   const [showAwardCeremony, setShowAwardCeremony] = useState(false);
+  const [showIntro, setShowIntro] = useState(false);
 
   const episodes = [
     {
@@ -327,7 +328,24 @@ const Index = () => {
             </div>
             <Card className="overflow-hidden bg-card border-border">
               <div className="aspect-video bg-black relative">
-                {!isLiveStreaming ? (
+                {showIntro ? (
+                  <div className="absolute inset-0 bg-gradient-to-br from-orange-500 via-yellow-500 to-orange-600 flex items-center justify-center animate-fade-in">
+                    <div className="text-center">
+                      <img
+                        src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/8261c3f6-94be-4ab9-b603-26124a1dcf27.jpg"
+                        alt="Заставка - Завтрак с Максимом Зуевым"
+                        className="w-full h-full object-cover absolute inset-0"
+                      />
+                      <div className="relative z-10 animate-pulse">
+                        <h2 className="text-6xl font-bold text-white mb-4 drop-shadow-2xl">Завтрак с Максимом Зуевым</h2>
+                        <p className="text-2xl text-white drop-shadow-lg">Ведущий: Максим Зуев, 9 лет</p>
+                        <div className="mt-8">
+                          <Icon name="Coffee" size={80} className="text-white mx-auto drop-shadow-xl animate-bounce" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ) : !isLiveStreaming ? (
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                     <div className="text-center px-4">
                       <div className="bg-orange-500/20 rounded-full p-6 inline-block mb-4">
@@ -339,7 +357,13 @@ const Index = () => {
                       <Badge className="bg-red-500 text-white mb-4">ПРЕМЬЕРА</Badge>
                       <Button 
                         className="mt-6 bg-orange-500 hover:bg-orange-600 text-white"
-                        onClick={() => setIsLiveStreaming(true)}
+                        onClick={() => {
+                          setShowIntro(true);
+                          setTimeout(() => {
+                            setShowIntro(false);
+                            setIsLiveStreaming(true);
+                          }, 5000);
+                        }}
                       >
                         <Icon name="Play" size={20} className="mr-2" />
                         Смотреть премьеру
