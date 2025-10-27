@@ -13,7 +13,7 @@ const Index = () => {
       id: 1,
       title: 'Большой футбол. Выпуск 1: Первый матч группового этапа',
       date: '27 октября 2025',
-      duration: '55 мин',
+      duration: '30 мин (матч 20 мин)',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
       category: 'Реалити-шоу'
     },
@@ -21,7 +21,7 @@ const Index = () => {
       id: 2,
       title: 'Большой футбол. Выпуск 2: Второй матч группового этапа',
       date: '26 октября 2025',
-      duration: '55 мин',
+      duration: '30 мин (матч 20 мин)',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
       category: 'Реалити-шоу'
     },
@@ -29,7 +29,7 @@ const Index = () => {
       id: 3,
       title: 'Большой футбол. Выпуск 3: Третий матч группового этапа',
       date: '25 октября 2025',
-      duration: '55 мин',
+      duration: '30 мин (матч 20 мин)',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
       category: 'Реалити-шоу'
     },
@@ -37,7 +37,7 @@ const Index = () => {
       id: 4,
       title: 'Большой футбол. Выпуск 4: Четвёртый матч группового этапа',
       date: '24 октября 2025',
-      duration: '55 мин',
+      duration: '30 мин (матч 20 мин)',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
       category: 'Реалити-шоу'
     },
@@ -45,7 +45,7 @@ const Index = () => {
       id: 5,
       title: 'Большой футбол. Выпуск 5: Пятый матч группового этапа',
       date: '23 октября 2025',
-      duration: '55 мин',
+      duration: '30 мин (матч 20 мин)',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
       category: 'Реалити-шоу'
     },
@@ -53,7 +53,7 @@ const Index = () => {
       id: 6,
       title: 'Большой футбол. Выпуск 6: Финальный матч группового этапа',
       date: '22 октября 2025',
-      duration: '60 мин',
+      duration: '30 мин (матч 20 мин)',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
       category: 'Реалити-шоу'
     },
@@ -61,7 +61,7 @@ const Index = () => {
       id: 7,
       title: 'Большой футбол. Выпуск 7: Первый полуфинал',
       date: '21 октября 2025',
-      duration: '65 мин',
+      duration: '30 мин (матч 20 мин)',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
       category: 'Реалити-шоу'
     },
@@ -69,7 +69,7 @@ const Index = () => {
       id: 8,
       title: 'Большой футбол. Выпуск 8: Второй полуфинал',
       date: '20 октября 2025',
-      duration: '65 мин',
+      duration: '30 мин (матч 20 мин)',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
       category: 'Реалити-шоу'
     },
@@ -77,7 +77,7 @@ const Index = () => {
       id: 9,
       title: 'Большой футбол. Выпуск 9: Финал',
       date: '19 октября 2025',
-      duration: '75 мин',
+      duration: '45 мин (матч 20 мин)',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7e81838e-d007-466b-9e52-f48e4a049fd2.jpg',
       category: 'Реалити-шоу'
     }
