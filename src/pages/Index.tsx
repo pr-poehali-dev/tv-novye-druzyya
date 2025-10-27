@@ -8,6 +8,7 @@ const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
   const [isLiveStreaming, setIsLiveStreaming] = useState(false);
   const [showCredits, setShowCredits] = useState(false);
+  const [showAwardCeremony, setShowAwardCeremony] = useState(false);
 
   const episodes = [
     {
@@ -341,6 +342,14 @@ const Index = () => {
                       </Button>
                       <Button 
                         variant="secondary" 
+                        className="bg-yellow-500/80 hover:bg-yellow-600 backdrop-blur-sm text-white"
+                        onClick={() => setShowAwardCeremony(true)}
+                      >
+                        <Icon name="Award" size={20} className="mr-2" />
+                        Награждение
+                      </Button>
+                      <Button 
+                        variant="secondary" 
                         className="bg-orange-500/80 hover:bg-orange-600 backdrop-blur-sm text-white"
                         onClick={() => setShowCredits(true)}
                       >
@@ -439,6 +448,124 @@ const Index = () => {
                               </div>
                               <p className="text-sm text-gray-500 mt-6">© 2025 Новые друзья ТВ. Все права защищены.</p>
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    {showAwardCeremony && (
+                      <div className="absolute inset-0 bg-gradient-to-b from-purple-900 via-blue-900 to-black flex items-center justify-center overflow-y-auto z-10 p-8">
+                        <div className="absolute top-4 right-4 z-20">
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            className="text-white hover:bg-white/20"
+                            onClick={() => setShowAwardCeremony(false)}
+                          >
+                            <Icon name="X" size={24} />
+                          </Button>
+                        </div>
+                        <div className="w-full max-w-5xl animate-fade-in">
+                          <div className="text-center text-white mb-12">
+                            <div className="mb-6">
+                              <Icon name="Sparkles" size={60} className="text-yellow-400 mx-auto mb-4 animate-pulse" />
+                              <h2 className="text-5xl font-bold mb-2">ТОРЖЕСТВЕННАЯ ЦЕРЕМОНИЯ</h2>
+                              <p className="text-2xl text-yellow-400">Награждение команд турнира "Большой футбол"</p>
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <Card className="bg-gradient-to-br from-orange-900/40 to-orange-700/20 border-2 border-orange-600/50 backdrop-blur-sm">
+                              <CardContent className="p-6 text-center text-white">
+                                <div className="text-6xl mb-3">🥉</div>
+                                <p className="text-orange-400 text-sm font-semibold mb-2">3 МЕСТО</p>
+                                <div className="flex items-center justify-center space-x-2 mb-2">
+                                  <div className="w-4 h-4 rounded-full bg-green-500"></div>
+                                  <h3 className="text-2xl font-bold">Зелёные Квадратики</h3>
+                                </div>
+                                <p className="text-sm text-gray-300">Бронзовые призёры турнира</p>
+                              </CardContent>
+                            </Card>
+
+                            <Card className="bg-gradient-to-br from-gray-700/40 to-gray-600/20 border-2 border-gray-500/50 backdrop-blur-sm">
+                              <CardContent className="p-6 text-center text-white">
+                                <div className="text-4xl mb-3">4️⃣</div>
+                                <p className="text-gray-400 text-sm font-semibold mb-2">4 МЕСТО</p>
+                                <div className="flex items-center justify-center space-x-2 mb-2">
+                                  <div className="w-4 h-4 rounded-full bg-orange-400"></div>
+                                  <h3 className="text-xl font-bold">Персиковые Знаки</h3>
+                                </div>
+                              </CardContent>
+                            </Card>
+
+                            <Card className="bg-gradient-to-br from-gray-600/40 to-gray-500/20 border-2 border-gray-400/50 backdrop-blur-sm">
+                              <CardContent className="p-6 text-center text-white">
+                                <div className="text-4xl mb-3">5️⃣</div>
+                                <p className="text-gray-400 text-sm font-semibold mb-2">5 МЕСТО</p>
+                                <div className="flex items-center justify-center space-x-2 mb-2">
+                                  <div className="w-4 h-4 rounded-full bg-orange-500"></div>
+                                  <h3 className="text-xl font-bold">Рыжие Знаки</h3>
+                                </div>
+                              </CardContent>
+                            </Card>
+
+                            <Card className="bg-gradient-to-br from-gray-500/40 to-gray-400/20 border-2 border-gray-300/50 backdrop-blur-sm">
+                              <CardContent className="p-6 text-center text-white">
+                                <div className="text-4xl mb-3">6️⃣</div>
+                                <p className="text-gray-400 text-sm font-semibold mb-2">6 МЕСТО</p>
+                                <div className="flex items-center justify-center space-x-2 mb-2">
+                                  <div className="w-4 h-4 rounded-full bg-red-500"></div>
+                                  <h3 className="text-xl font-bold">Огненные Мысли</h3>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          </div>
+
+                          <Card className="bg-gradient-to-br from-gray-400/40 to-gray-300/20 border-2 border-gray-300/50 backdrop-blur-sm mb-6">
+                            <CardContent className="p-8 text-center text-white">
+                              <div className="text-6xl mb-4">🥈</div>
+                              <p className="text-gray-300 text-lg font-semibold mb-3">2 МЕСТО • СЕРЕБРЯНЫЕ ПРИЗЁРЫ</p>
+                              <div className="flex items-center justify-center space-x-2 mb-3">
+                                <div className="w-5 h-5 rounded-full bg-orange-600"></div>
+                                <h3 className="text-3xl font-bold">Рыжие Крутышки</h3>
+                              </div>
+                              <p className="text-gray-300">Достойные соперники в финальной битве</p>
+                            </CardContent>
+                          </Card>
+
+                          <Card className="bg-gradient-to-br from-yellow-500/50 to-yellow-600/30 border-4 border-yellow-400 backdrop-blur-sm animate-scale-in shadow-2xl shadow-yellow-500/50">
+                            <CardContent className="p-10 text-center text-white">
+                              <div className="mb-4">
+                                <Icon name="Trophy" size={100} className="text-yellow-300 mx-auto animate-pulse" />
+                              </div>
+                              <div className="text-8xl mb-4">🏆</div>
+                              <p className="text-yellow-300 text-2xl font-bold mb-4">🎉 ЧЕМПИОНЫ ТУРНИРА 🎉</p>
+                              <p className="text-yellow-200 text-lg font-semibold mb-4">1 МЕСТО • ОБЛАДАТЕЛИ КУБКА БОЛЬШОГО ФУТБОЛА</p>
+                              <div className="flex items-center justify-center space-x-3 mb-4">
+                                <div className="w-6 h-6 rounded-full bg-pink-500"></div>
+                                <h3 className="text-5xl font-bold">Малиновые Цветочки</h3>
+                              </div>
+                              <p className="text-xl text-yellow-100 mb-6">Триумфаторы первого сезона!</p>
+                              <div className="flex items-center justify-center space-x-2 text-sm text-yellow-200">
+                                <Icon name="Star" size={20} className="text-yellow-300" />
+                                <span>Лучшая команда сезона</span>
+                                <Icon name="Star" size={20} className="text-yellow-300" />
+                              </div>
+                            </CardContent>
+                          </Card>
+
+                          <div className="text-center mt-8 text-white">
+                            <p className="text-lg mb-2">Поздравляем всех участников турнира!</p>
+                            <p className="text-gray-400">Большой футбол • Сезон 1 • Новые друзья ТВ</p>
+                            <Button
+                              className="mt-6 bg-orange-500 hover:bg-orange-600"
+                              onClick={() => {
+                                setShowAwardCeremony(false);
+                                setShowCredits(true);
+                              }}
+                            >
+                              <Icon name="Film" size={20} className="mr-2" />
+                              Смотреть титры
+                            </Button>
                           </div>
                         </div>
                       </div>
