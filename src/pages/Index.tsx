@@ -414,8 +414,8 @@ const Index = () => {
                               </div>
 
                               <div>
-                                <p className="text-gray-400 text-sm mb-2">ВЕДУЩИЙ</p>
-                                <p className="text-xl font-semibold">Максим Комментаторов</p>
+                                <p className="text-gray-400 text-sm mb-2">ВЕДУЩИЕ ШОУ</p>
+                                <p className="text-2xl font-bold">Котик • Бубуко</p>
                               </div>
 
                               <div>
