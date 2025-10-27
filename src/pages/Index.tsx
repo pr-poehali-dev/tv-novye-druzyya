@@ -6,6 +6,7 @@ import Icon from '@/components/ui/icon';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
+  const [isLiveStreaming, setIsLiveStreaming] = useState(false);
 
   const episodes = [
     {
@@ -250,15 +251,58 @@ const Index = () => {
               </Badge>
             </div>
             <Card className="overflow-hidden bg-card border-border">
-              <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                <div className="text-center">
-                  <Icon name="Tv" size={80} className="text-primary mx-auto mb-4" />
-                  <p className="text-xl text-muted-foreground">Прямая трансляция будет доступна здесь</p>
-                  <Button className="mt-6 bg-primary hover:bg-primary/90">
-                    <Icon name="Play" size={20} className="mr-2" />
-                    Запустить эфир
-                  </Button>
-                </div>
+              <div className="aspect-video bg-black relative">
+                {!isLiveStreaming ? (
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                    <div className="text-center">
+                      <Icon name="Tv" size={80} className="text-primary mx-auto mb-4" />
+                      <p className="text-xl text-muted-foreground">Прямая трансляция будет доступна здесь</p>
+                      <Button 
+                        className="mt-6 bg-primary hover:bg-primary/90"
+                        onClick={() => setIsLiveStreaming(true)}
+                      >
+                        <Icon name="Play" size={20} className="mr-2" />
+                        Запустить эфир
+                      </Button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center animate-fade-in">
+                    <img
+                      src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/14697817-169b-49d5-8853-459479aa5ecd.jpg"
+                      alt="Прямой эфир"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 left-4 bg-red-500 text-white px-4 py-2 rounded-full flex items-center animate-pulse">
+                      <div className="w-2 h-2 bg-white rounded-full mr-2"></div>
+                      LIVE
+                    </div>
+                    <div className="absolute bottom-4 right-4 space-x-2">
+                      <Button 
+                        variant="secondary" 
+                        size="icon"
+                        className="bg-black/50 hover:bg-black/70 backdrop-blur-sm"
+                      >
+                        <Icon name="Volume2" size={20} />
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="icon"
+                        className="bg-black/50 hover:bg-black/70 backdrop-blur-sm"
+                        onClick={() => setIsLiveStreaming(false)}
+                      >
+                        <Icon name="Pause" size={20} />
+                      </Button>
+                      <Button 
+                        variant="secondary" 
+                        size="icon"
+                        className="bg-black/50 hover:bg-black/70 backdrop-blur-sm"
+                      >
+                        <Icon name="Maximize" size={20} />
+                      </Button>
+                    </div>
+                  </div>
+                )}
               </div>
               <CardContent className="p-6">
                 <h3 className="text-2xl font-bold mb-2">Сейчас в эфире: Прайм-тайм шоу</h3>
