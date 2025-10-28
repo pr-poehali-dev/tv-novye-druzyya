@@ -557,10 +557,10 @@ const Index = () => {
         <div className="container mx-auto">
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center justify-between mb-8">
-              <h2 className="text-4xl font-bold">Прямой эфир</h2>
-              <Badge className="bg-orange-500 text-white px-4 py-2 text-sm">
-                <Icon name="Calendar" size={16} className="mr-2" />
-                СУББОТА 1 НОЯБРЯ 10:00
+              <h2 className="text-4xl font-bold">🔴 Прямой эфир</h2>
+              <Badge className="bg-red-600 text-white px-4 py-2 text-sm animate-pulse">
+                <Icon name="Radio" size={16} className="mr-2" />
+                СЕЙЧАС В ЭФИРЕ
               </Badge>
             </div>
             <Card className="overflow-hidden bg-card border-border">
@@ -583,17 +583,21 @@ const Index = () => {
                     </div>
                   </div>
                 ) : !isLiveStreaming ? (
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+                  <div className="absolute inset-0 bg-gradient-to-br from-red-600/30 to-purple-600/30 flex items-center justify-center">
                     <div className="text-center px-4">
-                      <div className="bg-orange-500/20 rounded-full p-6 inline-block mb-4">
-                        <Icon name="Coffee" size={80} className="text-orange-500 mx-auto" />
+                      <div className="bg-red-600/30 rounded-full p-6 inline-block mb-4 border-2 border-red-500 animate-pulse">
+                        <Icon name="Trophy" size={80} className="text-yellow-400 mx-auto" />
                       </div>
-                      <h3 className="text-3xl font-bold mb-2">Завтрак с Максимом Зуевым</h3>
-                      <p className="text-xl text-muted-foreground mb-2">Суббота, 1 ноября 2025</p>
-                      <p className="text-2xl font-bold text-primary mb-6">10:00 МСК</p>
-                      <Badge className="bg-red-500 text-white mb-4">ПРЕМЬЕРА</Badge>
+                      <Badge className="bg-red-600 text-white mb-4 text-lg px-6 py-2">🔴 ПРЯМОЙ ЭФИР</Badge>
+                      <h3 className="text-4xl font-bold mb-4 text-white">ФИНАЛ Талант-Шоу Сезон 3</h3>
+                      <p className="text-xl text-gray-200 mb-2">Государственный Кремлёвский Дворец</p>
+                      <p className="text-2xl font-bold text-red-400 mb-4">СЕЙЧАС В ЭФИРЕ</p>
+                      <div className="bg-yellow-500/20 border border-yellow-400 rounded-lg p-4 mb-6 max-w-md mx-auto">
+                        <p className="text-yellow-200 font-bold mb-2">🏆 Главный приз: 10 000 000 ₽</p>
+                        <p className="text-white text-sm">89 участников • 1 победитель</p>
+                      </div>
                       <Button 
-                        className="mt-6 bg-orange-500 hover:bg-orange-600 text-white"
+                        className="mt-6 bg-red-600 hover:bg-red-700 text-white text-xl py-6 px-8 animate-pulse"
                         onClick={() => {
                           setShowIntro(true);
                           setTimeout(() => {
@@ -602,16 +606,16 @@ const Index = () => {
                           }, 5000);
                         }}
                       >
-                        <Icon name="Play" size={20} className="mr-2" />
-                        Смотреть премьеру
+                        <Icon name="Play" size={24} className="mr-2" />
+                        Смотреть финал
                       </Button>
                     </div>
                   </div>
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center animate-fade-in">
                     <img
-                      src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7a5b6cbe-0fc3-4cb9-941c-d3fdfbccb3e9.jpg"
-                      alt="Прямой эфир - Завтрак с Максимом"
+                      src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/8b2efea9-a31e-48df-b870-ee784eb2c3b2.jpg"
+                      alt="Прямой эфир - ФИНАЛ Талант-Шоу"
                       className="w-full h-full object-cover"
                     />
                     <div className="absolute top-4 left-4 flex items-center space-x-3">
@@ -620,31 +624,31 @@ const Index = () => {
                         alt="Новые друзья ТВ"
                         className="h-12 rounded-lg bg-white/90 p-2 shadow-lg"
                       />
-                      <div className="bg-red-500 text-white px-4 py-2 rounded-full flex items-center animate-pulse shadow-lg">
-                        <Icon name="Video" size={16} className="mr-2" />
-                        LIVE
+                      <div className="bg-red-600 text-white px-4 py-2 rounded-full flex items-center animate-pulse shadow-lg">
+                        <Icon name="Radio" size={16} className="mr-2" />
+                        ПРЯМОЙ ЭФИР
                       </div>
                     </div>
                     <div className="absolute top-4 right-4 bg-black/70 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
                       <div className="flex items-center space-x-2">
-                        <Icon name="Camera" size={20} className="text-orange-500" />
-                        <span className="text-sm font-medium">Камера 1 • Кухня</span>
+                        <Icon name="Trophy" size={20} className="text-yellow-400" />
+                        <span className="text-sm font-medium">Кремлёвский Дворец</span>
                       </div>
                     </div>
                     <div className="absolute bottom-20 left-4 right-4">
-                      <div className="bg-black/80 text-white px-6 py-4 rounded-lg backdrop-blur-sm border-2 border-orange-500/50 max-w-2xl">
+                      <div className="bg-black/90 text-white px-6 py-4 rounded-lg backdrop-blur-sm border-2 border-red-500/50 max-w-3xl mx-auto">
                         <div className="flex items-center space-x-4">
-                          <Icon name="Coffee" size={32} className="text-orange-500" />
+                          <Icon name="Mic2" size={32} className="text-red-500" />
                           <div className="flex-1">
-                            <div className="text-xs text-gray-300 mb-1">ЗАВТРАК С МАКСИМОМ ЗУЕВЫМ • ПРЕМЬЕРА</div>
-                            <div className="font-bold text-lg mb-2">Французские блинчики</div>
-                            <div className="text-sm text-gray-300">
-                              🥞 Сейчас на экране: Максим готовит тесто для блинчиков
+                            <div className="text-xs text-gray-300 mb-1">ФИНАЛ ТАЛАНТ-ШОУ СЕЗОН 3 • ПРЯМОЙ ЭФИР</div>
+                            <div className="font-bold text-xl mb-2 text-red-400">Голосование началось!</div>
+                            <div className="text-sm text-gray-200">
+                              🎭 <strong>Максим Зуев:</strong> "Что ж, я Максим, мы начинаем финал проекта Талант-Шоу 3 сезон из Кремля! Голосуйте за своего любимого фаворита - всё решится прямо сейчас!"
                             </div>
                           </div>
-                          <div className="text-center bg-orange-500/20 px-4 py-2 rounded">
+                          <div className="text-center bg-red-500/20 px-4 py-2 rounded border border-red-500">
                             <div className="text-xs text-gray-300">ОКОНЧАНИЕ</div>
-                            <div className="text-xl font-bold text-orange-500">12:01</div>
+                            <div className="text-xl font-bold text-red-400">23:00</div>
                           </div>
                         </div>
                       </div>
@@ -667,11 +671,11 @@ const Index = () => {
                       </Button>
                       <Button 
                         variant="secondary" 
-                        className="bg-orange-500/80 hover:bg-orange-600 backdrop-blur-sm text-white"
-                        onClick={() => setShowCredits(true)}
+                        className="bg-red-600 hover:bg-red-700 backdrop-blur-sm text-white animate-pulse"
+                        onClick={() => alert('Голосование открыто! Выберите своего фаворита в списке участников.')}
                       >
-                        <Icon name="Film" size={20} className="mr-2" />
-                        Титры
+                        <Icon name="Vote" size={20} className="mr-2" />
+                        Голосовать
                       </Button>
                       <Button 
                         variant="secondary" 
