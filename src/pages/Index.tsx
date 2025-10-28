@@ -435,7 +435,10 @@ const Index = () => {
         </div>
       </section>
 
-      {selectedEpisode !== null && (
+      {selectedEpisode !== null && (() => {
+        const episode = episodes.find(ep => ep.id === selectedEpisode);
+        if (!episode) return null;
+        return (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
           <div className="w-full max-w-6xl bg-card rounded-xl overflow-hidden">
             <div className="relative">
@@ -449,8 +452,8 @@ const Index = () => {
               </Button>
               <div className="aspect-video bg-black relative">
                 <img
-                  src={episodes[selectedEpisode].image}
-                  alt={episodes[selectedEpisode].title}
+                  src={episode.image}
+                  alt={episode.title}
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -460,25 +463,25 @@ const Index = () => {
                 </div>
                 <div className="absolute top-4 left-4">
                   <Badge className="bg-primary text-primary-foreground text-lg px-4 py-2">
-                    {episodes[selectedEpisode].category}
+                    {episode.category}
                   </Badge>
                 </div>
               </div>
               <div className="p-8">
-                <h2 className="text-3xl font-bold mb-4">{episodes[selectedEpisode].title}</h2>
+                <h2 className="text-3xl font-bold mb-4">{episode.title}</h2>
                 <div className="flex items-center space-x-6 text-muted-foreground mb-6">
                   <span className="flex items-center">
                     <Icon name="Calendar" size={20} className="mr-2" />
-                    {episodes[selectedEpisode].date}
+                    {episode.date}
                   </span>
                   <span className="flex items-center">
                     <Icon name="Clock" size={20} className="mr-2" />
-                    {episodes[selectedEpisode].duration}
+                    {episode.duration}
                   </span>
                 </div>
-                {episodes[selectedEpisode].description && (
+                {episode.description && (
                   <p className="text-lg text-muted-foreground mb-6">
-                    {episodes[selectedEpisode].description}
+                    {episode.description}
                   </p>
                 )}
                 <div className="flex space-x-4">
@@ -495,7 +498,8 @@ const Index = () => {
             </div>
           </div>
         </div>
-      )}
+        );
+      })()}
 
       <section id="schedule" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto">
