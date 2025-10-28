@@ -632,15 +632,14 @@ const Index = () => {
                       alt="Прямой эфир - ФИНАЛ Талант-Шоу"
                       className="w-full h-full object-cover"
                     />
-                    <div className="absolute top-4 left-4 flex items-center space-x-3">
+                    <div className="absolute top-4 left-4">
                       <img
                         src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/cfbeab5f-6dbf-4333-9543-336c22d16a47.jpg"
                         alt="Новые друзья ТВ"
-                        className="h-12 rounded-lg bg-white/90 p-2 shadow-lg"
+                        className="h-16 rounded-lg bg-white/95 p-2 shadow-xl"
                       />
-                      <div className="bg-red-600 text-white px-4 py-2 rounded-full flex items-center animate-pulse shadow-lg">
-                        <Icon name="Radio" size={16} className="mr-2" />
-                        ПРЯМОЙ ЭФИР
+                      <div className="bg-black/70 text-white px-3 py-1 rounded text-xs font-semibold mt-1 text-center">
+                        Воскресенье, 2 ноября
                       </div>
                     </div>
                     <div className="absolute top-4 right-4 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg animate-pulse">
