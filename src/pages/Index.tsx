@@ -272,6 +272,68 @@ const Index = () => {
           </div>
 
           <div className="mt-12">
+            <div className="bg-gradient-to-r from-red-600/30 to-purple-600/30 rounded-2xl overflow-hidden border-2 border-red-500 shadow-2xl animate-pulse-slow">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-[400px] md:h-auto">
+                  <img
+                    src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/8b2efea9-a31e-48df-b870-ee784eb2c3b2.jpg"
+                    alt="Финал Талант-Шоу"
+                    className="w-full h-full object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-red-600 text-white text-xl px-6 py-3 animate-pulse">
+                    🔴 ПРЯМОЙ ЭФИР
+                  </Badge>
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-red-950/50 to-purple-950/50">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Icon name="Trophy" size={40} className="text-yellow-500" />
+                    <Badge className="text-sm bg-yellow-500 text-black font-bold">ГРАНДИОЗНЫЙ ФИНАЛ</Badge>
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4 text-white">ФИНАЛ Талант-Шоу Сезон 3</h3>
+                  <p className="text-xl text-gray-200 mb-6">
+                    Прямая трансляция из Государственного Кремлёвского Дворца! Определим победителя вместе!
+                  </p>
+                  <div className="bg-black/40 rounded-xl p-6 mb-6 border border-red-500/50">
+                    <div className="text-center mb-4">
+                      <p className="text-sm text-gray-300 mb-2">До начала финала осталось:</p>
+                      <div className="text-6xl font-bold text-red-500 mb-1">4 дня</div>
+                      <div className="text-3xl font-semibold text-yellow-400">120 часов</div>
+                    </div>
+                  </div>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Calendar" size={20} className="text-red-500" />
+                      <span className="font-semibold">Воскресенье, 2 ноября 2025</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Clock" size={20} className="text-red-500" />
+                      <span className="font-semibold">20:20 МСК (3 часа)</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="MapPin" size={20} className="text-red-500" />
+                      <span>Кремлёвский Дворец</span>
+                    </div>
+                  </div>
+                  <div className="bg-yellow-500/20 border border-yellow-500 rounded-lg p-4 mb-6">
+                    <p className="text-yellow-200 text-sm font-semibold flex items-center gap-2">
+                      <Icon name="AlertCircle" size={18} />
+                      Голосование закрывается сегодня в 22:00! Голосуйте СЕЙЧАС!
+                    </p>
+                  </div>
+                  <Button 
+                    size="lg" 
+                    className="bg-red-600 hover:bg-red-700 text-white text-xl py-6 animate-pulse"
+                    onClick={() => scrollToSection('live')}
+                  >
+                    <Icon name="Vote" size={24} className="mr-2" />
+                    Голосовать за участника
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-12">
             <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl overflow-hidden border-2 border-orange-500/50 shadow-2xl">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-[400px] md:h-auto">
