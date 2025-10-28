@@ -11,6 +11,8 @@ const Index = () => {
   const [showAwardCeremony, setShowAwardCeremony] = useState(false);
   const [showIntro, setShowIntro] = useState(false);
   const [selectedEpisode, setSelectedEpisode] = useState<number | null>(null);
+  const [showVoting, setShowVoting] = useState(false);
+  const [votedFor, setVotedFor] = useState<number | null>(null);
 
   const episodes = [
     {
@@ -194,6 +196,18 @@ const Index = () => {
       category: 'Реалити-шоу'
     }
   ];
+
+  const contestants = Array.from({ length: 89 }, (_, i) => ({
+    id: i + 1,
+    name: `Участник ${i + 1}`,
+    talent: ['Вокал', 'Танцы', 'Акробатика', 'Магия', 'Комедия', 'Музыка'][i % 6],
+    image: [
+      'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/2e0cdc94-0311-4b18-81f2-34035d390809.jpg',
+      'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/a45b78af-0281-442c-b326-5183d5d00066.jpg',
+      'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/792a0791-47bd-43a5-a4e9-83db5004cb76.jpg'
+    ][i % 3],
+    votes: Math.floor(Math.random() * 5000) + 1000
+  }));
 
   const schedule = [
     { time: '10:00', program: 'Завтрак с Максимом Зуевым: Французский завтрак', duration: '2 часа 1 мин (до 12:01)', highlight: true, isPremiere: true },
@@ -629,10 +643,10 @@ const Index = () => {
                         ПРЯМОЙ ЭФИР
                       </div>
                     </div>
-                    <div className="absolute top-4 right-4 bg-black/70 text-white px-4 py-2 rounded-lg backdrop-blur-sm">
+                    <div className="absolute top-4 right-4 bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg animate-pulse">
                       <div className="flex items-center space-x-2">
-                        <Icon name="Trophy" size={20} className="text-yellow-400" />
-                        <span className="text-sm font-medium">Кремлёвский Дворец</span>
+                        <Icon name="Radio" size={20} />
+                        <span className="text-sm font-bold">ПРЯМОЙ ЭФИР</span>
                       </div>
                     </div>
                     <div className="absolute bottom-20 left-4 right-4">
@@ -672,7 +686,7 @@ const Index = () => {
                       <Button 
                         variant="secondary" 
                         className="bg-red-600 hover:bg-red-700 backdrop-blur-sm text-white animate-pulse"
-                        onClick={() => alert('Голосование открыто! Выберите своего фаворита в списке участников.')}
+                        onClick={() => setShowVoting(true)}
                       >
                         <Icon name="Vote" size={20} className="mr-2" />
                         Голосовать
@@ -913,6 +927,97 @@ const Index = () => {
                   </div>
                 )}
               </div>
+              
+              {showVoting && (
+                <div className="fixed inset-0 bg-black/95 z-50 overflow-y-auto">
+                  <div className="container mx-auto px-4 py-8">
+                    <div className="flex items-center justify-between mb-8">
+                      <div>
+                        <h2 className="text-4xl font-bold text-white mb-2">🏆 Голосование за победителя</h2>
+                        <p className="text-gray-300">Выберите своего фаворита из 89 участников финала</p>
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="icon"
+                        className="text-white hover:bg-white/20"
+                        onClick={() => setShowVoting(false)}
+                      >
+                        <Icon name="X" size={32} />
+                      </Button>
+                    </div>
+                    
+                    <div className="bg-red-600/20 border border-red-500 rounded-lg p-4 mb-6">
+                      <p className="text-yellow-200 font-bold text-center">
+                        ⏰ Голосование закрывается сегодня в 22:00! Успейте проголосовать!
+                      </p>
+                    </div>
+
+                    {votedFor && (
+                      <div className="bg-green-600/20 border border-green-500 rounded-lg p-4 mb-6 animate-fade-in">
+                        <p className="text-green-200 font-bold text-center flex items-center justify-center gap-2">
+                          <Icon name="CheckCircle" size={24} />
+                          Ваш голос принят! Вы проголосовали за Участника {votedFor}
+                        </p>
+                      </div>
+                    )}
+
+                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                      {contestants.map((contestant) => (
+                        <Card
+                          key={contestant.id}
+                          className={`group cursor-pointer transition-all duration-300 hover:scale-105 ${
+                            votedFor === contestant.id
+                              ? 'border-4 border-green-500 bg-green-900/30'
+                              : 'border-border hover:border-red-500'
+                          }`}
+                          onClick={() => {
+                            setVotedFor(contestant.id);
+                            setTimeout(() => {
+                              alert(`Спасибо! Ваш голос за ${contestant.name} учтён!`);
+                            }, 300);
+                          }}
+                        >
+                          <div className="relative">
+                            <img
+                              src={contestant.image}
+                              alt={contestant.name}
+                              className="w-full h-40 object-cover rounded-t-lg"
+                            />
+                            {votedFor === contestant.id && (
+                              <div className="absolute top-2 right-2 bg-green-500 rounded-full p-1">
+                                <Icon name="Check" size={20} className="text-white" />
+                              </div>
+                            )}
+                            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
+                              <Badge className="bg-red-600 text-white text-xs">№{contestant.id}</Badge>
+                            </div>
+                          </div>
+                          <CardContent className="p-3">
+                            <h3 className="font-bold text-sm mb-1 truncate">{contestant.name}</h3>
+                            <p className="text-xs text-muted-foreground mb-2">{contestant.talent}</p>
+                            <div className="flex items-center gap-1 text-xs text-gray-400">
+                              <Icon name="Users" size={12} />
+                              <span>{contestant.votes.toLocaleString()}</span>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+
+                    <div className="mt-8 text-center">
+                      <Button
+                        size="lg"
+                        className="bg-red-600 hover:bg-red-700 text-white"
+                        onClick={() => setShowVoting(false)}
+                      >
+                        <Icon name="X" size={20} className="mr-2" />
+                        Закрыть голосование
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              )}
+
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <h3 className="text-2xl font-bold">Завтрак с Максимом Зуевым: Французские блинчики</h3>
