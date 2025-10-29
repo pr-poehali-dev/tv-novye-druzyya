@@ -406,6 +406,42 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 px-4 bg-gradient-to-br from-orange-500 via-amber-500 to-yellow-400">
+        <div className="container mx-auto">
+          <div className="max-w-4xl mx-auto text-center text-white">
+            <h2 className="text-5xl font-bold mb-6 drop-shadow-lg">🍳 Готовьте вместе с нами!</h2>
+            <p className="text-xl leading-relaxed mb-8 drop-shadow">
+              Чтобы готовить и смотреть любимые выпуски, вам нужно включить телефон, планшет, компьютер или телевизор, взять продукты и готовить вместе с нами!
+            </p>
+            <div className="bg-white/95 rounded-2xl p-8 shadow-2xl">
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                Смотрите новые выпуски кулинарной передачи<br />
+                <span className="text-orange-600">«Завтрак с Максимом»</span>
+              </h3>
+              <p className="text-xl text-gray-700 mb-6">
+                Премьера на канале <strong>НОВЫЕ ДРУЗЬЯ ТВ</strong>
+              </p>
+              <div className="flex items-center justify-center gap-8 flex-wrap">
+                <div className="flex items-center gap-3 bg-orange-100 rounded-full px-6 py-3 border-2 border-orange-500">
+                  <Icon name="ChefHat" size={32} className="text-orange-600" />
+                  <div className="text-left">
+                    <div className="text-sm text-orange-700 font-semibold">Завтрак с Максимом</div>
+                    <div className="text-lg font-bold text-orange-900">Суббота, 10:00</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-orange-100 rounded-full px-6 py-3 border-2 border-orange-500">
+                  <Icon name="Calendar" size={32} className="text-orange-600" />
+                  <div className="text-left">
+                    <div className="text-sm text-orange-700 font-semibold">Новые выпуски</div>
+                    <div className="text-lg font-bold text-orange-900">Каждую субботу</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="episodes" className="py-16 px-4">
         <div className="container mx-auto">
           <div className="flex items-center justify-between mb-8">
