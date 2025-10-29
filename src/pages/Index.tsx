@@ -490,6 +490,45 @@ const Index = () => {
                 На канале <span className="text-white bg-amber-900 px-4 py-2 rounded-lg">НОВЫЕ ДРУЗЬЯ ТВ</span>
               </div>
             </div>
+
+            <div className="mt-12 bg-red-600 rounded-3xl p-10 shadow-2xl border-4 border-red-400 animate-pulse">
+              <div className="text-5xl font-black text-white mb-6 drop-shadow-lg">
+                🎁 КОНКУРС! ВЫИГРАЙ 1 МЛН ₽
+              </div>
+              <div className="text-2xl text-yellow-300 font-bold mb-6">
+                или поездку в легендарный Форт Боярд!
+              </div>
+              <div className="bg-white rounded-2xl p-8 text-left">
+                <h4 className="text-2xl font-bold text-red-600 mb-4">Как участвовать:</h4>
+                <div className="space-y-3 text-gray-800 text-lg">
+                  <div className="flex items-start gap-3">
+                    <div className="bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">1</div>
+                    <p><strong>Ищи промокоды</strong> в шоу «Форт Боярд: Возвращение легенды»</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">2</div>
+                    <p><strong>Введи промокоды</strong> на сайте телеканала НОВЫЕ ДРУЗЬЯ ТВ</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">3</div>
+                    <p><strong>Выполняй задания</strong> и получай ключи 🔑</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold flex-shrink-0">4</div>
+                    <p><strong>Зарабатывай боярды</strong> за дополнительные задания и обменивай их на классные призы!</p>
+                  </div>
+                </div>
+                <div className="mt-6 p-4 bg-amber-50 rounded-xl border-2 border-amber-400">
+                  <p className="text-center text-xl font-bold text-amber-900">
+                    📺 Смотрите «Форт Боярд: Возвращение легенды»<br />
+                    Понедельник, 21:30 на канале НОВЫЕ ДРУЗЬЯ ТВ
+                  </p>
+                  <p className="text-center text-sm text-amber-700 mt-2">
+                    Все подробности конкурса на сайте телеканала НОВЫЕ ДРУЗЬЯ ТВ
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
