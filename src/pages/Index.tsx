@@ -13,6 +13,8 @@ const Index = () => {
   const [selectedEpisode, setSelectedEpisode] = useState<number | null>(null);
   const [showVoting, setShowVoting] = useState(false);
   const [votedFor, setVotedFor] = useState<number | null>(null);
+  const [showPromoCode, setShowPromoCode] = useState(false);
+  const [currentPromoCode, setCurrentPromoCode] = useState('');
 
   const episodes = [
     {
@@ -246,6 +248,34 @@ const Index = () => {
     const element = document.getElementById(section);
     element?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const promoCodes = [
+    'FORT2025',
+    'GOLD777',
+    'BOYARD100',
+    'KEY2024',
+    'WINNER123',
+    'LEGEND999'
+  ];
+
+  const showRandomPromoCode = () => {
+    const randomCode = promoCodes[Math.floor(Math.random() * promoCodes.length)];
+    setCurrentPromoCode(randomCode);
+    setShowPromoCode(true);
+    setTimeout(() => {
+      setShowPromoCode(false);
+    }, 15000);
+  };
+
+  useState(() => {
+    const intervals = [
+      setTimeout(() => showRandomPromoCode(), 30000),
+      setTimeout(() => showRandomPromoCode(), 90000),
+      setTimeout(() => showRandomPromoCode(), 150000),
+      setTimeout(() => showRandomPromoCode(), 210000)
+    ];
+    return () => intervals.forEach(clearTimeout);
+  });
 
   return (
     <div className="min-h-screen bg-background">
@@ -1200,6 +1230,37 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {showPromoCode && (
+        <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 animate-fade-in">
+          <div className="bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-600 rounded-3xl p-8 shadow-2xl border-4 border-yellow-300 max-w-md animate-pulse-slow">
+            <div className="text-center">
+              <div className="bg-white rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <Icon name="Gift" size={48} className="text-amber-600" />
+              </div>
+              <h3 className="text-3xl font-black text-white mb-2 drop-shadow-lg">🔑 ПРОМОКОД!</h3>
+              <p className="text-white text-sm mb-4 drop-shadow">Запишите и зарегистрируйте на сайте</p>
+              <div className="bg-white rounded-xl p-6 mb-4 border-4 border-amber-700">
+                <p className="text-5xl font-black text-amber-900 tracking-wider select-all">
+                  {currentPromoCode}
+                </p>
+              </div>
+              <div className="bg-amber-900/50 rounded-lg p-4 text-white text-sm space-y-2">
+                <p className="font-bold">✓ Зарегистрируйте на novyedruzya.tv</p>
+                <p className="font-bold">✓ Выполняйте задания → получайте ключи 🔑</p>
+                <p className="font-bold">✓ Зарабатывайте боярды → обменивайте на призы!</p>
+              </div>
+              <Button
+                onClick={() => setShowPromoCode(false)}
+                className="mt-4 bg-white text-amber-900 hover:bg-gray-100 font-bold"
+                size="lg"
+              >
+                Понятно
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <section id="contacts" className="py-16 px-4 bg-muted/30">
         <div className="container mx-auto">
