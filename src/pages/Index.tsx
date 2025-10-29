@@ -115,6 +115,15 @@ const Index = () => {
       description: '🔴 ПРЯМОЙ ЭФИР из Государственного Кремлёвского Дворца! 89 участников борются за победу! Главный приз: 10 млн рублей + Кубок Чемпионов! Голосуйте СЕЙЧАС за своего фаворита! Голосование закрывается сегодня в 22:00. Воскресенье, 20:20 на канале НОВЫЕ ДРУЗЬЯ ТВ.'
     },
     {
+      id: 300,
+      title: 'Форт Боярд: Возвращение легенды - Выпуск 1',
+      date: '10 ноября 2025',
+      duration: '90 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/cb3a39e9-611d-48c1-8930-1cdf40d673c6.jpg',
+      category: 'Приключенческое шоу',
+      description: '🏰 Возвращение легендарной игры, которую ждёт вся страна! Команды, которые доберутся до сокровищницы легендарного французского Форта! Если вы готовы — смотрите новое приключенческое шоу ФОРТ БОЯРД: Возвращение легенды! Понедельник, 21:30 на канале НОВЫЕ ДРУЗЬЯ ТВ.'
+    },
+    {
       id: 1,
       title: 'Завтрак с Максимом Зуевым: Французские блинчики',
       date: '2 ноября 2025',
@@ -436,6 +445,49 @@ const Index = () => {
                     <div className="text-lg font-bold text-orange-900">Каждую субботу</div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 bg-gradient-to-br from-amber-700 via-yellow-600 to-amber-800">
+        <div className="container mx-auto">
+          <div className="max-w-5xl mx-auto text-center text-white">
+            <h2 className="text-6xl font-bold mb-6 drop-shadow-2xl">🏰 Возвращение легенды!</h2>
+            <p className="text-2xl leading-relaxed mb-8 drop-shadow-lg font-semibold">
+              Возвращение легендарной игры, которую ждёт вся страна!<br />
+              Команды, которые доберутся до сокровищницы легендарного французского Форта!
+            </p>
+            <div className="bg-gradient-to-r from-yellow-500 to-amber-600 rounded-3xl p-10 shadow-2xl border-4 border-yellow-400">
+              <h3 className="text-4xl font-bold text-gray-900 mb-4">
+                Если вы готовы — тогда смотрите<br />
+                новое приключенческое шоу
+              </h3>
+              <div className="text-6xl font-black text-white mb-6 drop-shadow-lg" style={{ textShadow: '3px 3px 0px rgba(0,0,0,0.3)' }}>
+                ФОРТ БОЯРД
+              </div>
+              <div className="text-3xl font-bold text-gray-900 mb-8">
+                Возвращение легенды
+              </div>
+              <div className="flex items-center justify-center gap-6 flex-wrap">
+                <div className="flex items-center gap-3 bg-white rounded-full px-8 py-4 border-4 border-amber-800 shadow-xl">
+                  <Icon name="Calendar" size={40} className="text-amber-700" />
+                  <div className="text-left">
+                    <div className="text-sm text-amber-700 font-semibold">Премьера</div>
+                    <div className="text-2xl font-bold text-gray-900">10 ноября</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-3 bg-white rounded-full px-8 py-4 border-4 border-amber-800 shadow-xl">
+                  <Icon name="Clock" size={40} className="text-amber-700" />
+                  <div className="text-left">
+                    <div className="text-sm text-amber-700 font-semibold">Время</div>
+                    <div className="text-2xl font-bold text-gray-900">Понедельник, 21:30</div>
+                  </div>
+                </div>
+              </div>
+              <div className="mt-8 text-xl font-bold text-gray-900">
+                На канале <span className="text-white bg-amber-900 px-4 py-2 rounded-lg">НОВЫЕ ДРУЗЬЯ ТВ</span>
               </div>
             </div>
           </div>
