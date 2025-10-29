@@ -123,8 +123,16 @@ const Index = () => {
       duration: '90 мин',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/a153fae4-be7b-427b-a24c-165eef8b57b2.jpg',
       category: 'Приключенческое шоу',
-      description: '🏰 ПРЕМЬЕРА первого выпуска нового приключенческого шоу телеканала НОВЫЕ ДРУЗЬЯ ТВ! Команда звёзд соберётся вместе, чтобы заработать золото в легендарном Форте! Смотрите Форт Боярд: Возвращение легенды. Понедельник, 10 ноября в 21:30 на канале НОВЫЕ ДРУЗЬЯ ТВ.',
-      nextEpisode: 'Выпуск 2 — 17 ноября, понедельник в 21:30'
+      description: '🏰 ПРЕМЬЕРА первого выпуска! Ведущий Максим Зуев встречает команду из 6 звёзд у стен легендарного французского Форта. Участников ждут встречи с загадочными жителями Форта и страшные испытания: туннели с пауками, подводные камеры, высотные балки! Сможет ли команда собрать все ключи и добраться до сокровищницы? Смотрите Форт Боярд: Возвращение легенды. Понедельник, 10 ноября в 21:30 на канале НОВЫЕ ДРУЗЬЯ ТВ.',
+      nextEpisode: 'Выпуск 2 — 17 ноября, понедельник в 21:30',
+      gallery: [
+        { image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/2ffe0a21-7902-4974-bc87-21059cbb99da.jpg', title: 'Ведущий Максим Зуев приветствует команду' },
+        { image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/74bb7162-aeb6-4be3-a867-1a1c4cc774d3.jpg', title: 'Загадочный Хранитель Форта' },
+        { image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/78f8f72f-4715-40ac-b995-367b64c5f518.jpg', title: 'Испытание: Туннель с пауками' },
+        { image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/08b37151-1ab9-4da7-84ec-b7fe7dc15f71.jpg', title: 'Испытание: Подводная камера' },
+        { image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/79d2757d-3b3c-4d51-97de-1fbfffa26735.jpg', title: 'Испытание: Высотная балка' },
+        { image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6a01e0e9-1c47-41a1-a04f-cd60c5a99fb0.jpg', title: 'Команда звёзд празднует победу!' }
+      ]
     },
     {
       id: 301,
@@ -682,6 +690,28 @@ const Index = () => {
                       <p className="text-sm font-semibold text-amber-900">
                         Следующий выпуск: <span className="font-bold">{episode.nextEpisode}</span>
                       </p>
+                    </div>
+                  </div>
+                )}
+                {episode.gallery && episode.gallery.length > 0 && (
+                  <div className="mb-6">
+                    <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                      <Icon name="Image" size={24} />
+                      Кадры из выпуска
+                    </h3>
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                      {episode.gallery.map((item, idx) => (
+                        <div key={idx} className="group relative overflow-hidden rounded-lg border border-border hover:border-primary transition-colors">
+                          <img
+                            src={item.image}
+                            alt={item.title}
+                            className="w-full h-32 object-cover transition-transform group-hover:scale-110"
+                          />
+                          <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center p-2">
+                            <p className="text-white text-xs text-center font-semibold">{item.title}</p>
+                          </div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}
