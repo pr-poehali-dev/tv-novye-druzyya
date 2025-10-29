@@ -235,7 +235,8 @@ const Index = () => {
     { time: '16:00', program: 'Культурный код', duration: '1 час' },
     { time: '18:00', program: 'Вечерние новости', duration: '45 мин' },
     { time: '19:00', program: 'Прайм-тайм шоу', duration: '2 часа' },
-    { time: '21:00', program: 'Ночные новости', duration: '30 мин' }
+    { time: '21:00', program: 'Ночные новости', duration: '30 мин' },
+    { time: '21:30', program: '🔴 Форт Боярд: Возвращение легенды - Выпуск 1 (ПРЯМОЙ ЭФИР)', duration: '90 мин (до 23:00)', highlight: true, isPremiere: true, isLive: true }
   ];
 
   const scrollToSection = (section: string) => {
@@ -304,69 +305,69 @@ const Index = () => {
           </div>
 
           <div className="mt-12">
-            <div className="bg-gradient-to-r from-red-600/30 to-purple-600/30 rounded-2xl overflow-hidden border-2 border-red-500 shadow-2xl animate-pulse-slow">
+            <div className="bg-gradient-to-r from-amber-700/30 to-yellow-600/30 rounded-2xl overflow-hidden border-2 border-amber-500 shadow-2xl animate-pulse-slow">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-[400px] md:h-auto">
                   <img
-                    src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/8b2efea9-a31e-48df-b870-ee784eb2c3b2.jpg"
-                    alt="Финал Талант-Шоу"
+                    src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/a153fae4-be7b-427b-a24c-165eef8b57b2.jpg"
+                    alt="Форт Боярд: Возвращение легенды"
                     className="w-full h-full object-cover"
                   />
                   <Badge className="absolute top-4 left-4 bg-red-600 text-white text-xl px-6 py-3 animate-pulse">
                     🔴 ПРЯМОЙ ЭФИР
                   </Badge>
                 </div>
-                <div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-red-950/50 to-purple-950/50">
+                <div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-amber-950/50 to-yellow-950/50">
                   <div className="flex items-center gap-2 mb-4">
-                    <Icon name="Trophy" size={40} className="text-yellow-500" />
-                    <Badge className="text-sm bg-yellow-500 text-black font-bold">ГРАНДИОЗНЫЙ ФИНАЛ</Badge>
+                    <Icon name="Castle" size={40} className="text-yellow-500" />
+                    <Badge className="text-sm bg-yellow-500 text-black font-bold">ПРЕМЬЕРА СЕЗОНА</Badge>
                   </div>
-                  <h3 className="text-4xl font-bold mb-4 text-white">ФИНАЛ Талант-Шоу Сезон 3</h3>
+                  <h3 className="text-4xl font-bold mb-4 text-white">Форт Боярд: Возвращение легенды</h3>
                   <p className="text-xl text-gray-200 mb-4">
-                    89 участников борются за победу! Только ОДИН станет чемпионом!
+                    Команда звёзд борется за сокровища легендарного французского Форта! Выпуск 1 — прямо СЕЙЧАС!
                   </p>
                   <div className="bg-yellow-500/30 border-2 border-yellow-400 rounded-xl p-4 mb-6">
                     <div className="flex items-center gap-3 mb-2">
-                      <Icon name="Trophy" size={28} className="text-yellow-400" />
-                      <p className="text-2xl font-bold text-yellow-300">Главный приз:</p>
+                      <Icon name="Coins" size={28} className="text-yellow-400" />
+                      <p className="text-2xl font-bold text-yellow-300">Сокровища Форта:</p>
                     </div>
-                    <p className="text-3xl font-black text-white mb-1">10 000 000 ₽</p>
-                    <p className="text-lg text-yellow-200 font-semibold">Кубок Чемпионов</p>
+                    <p className="text-3xl font-black text-white mb-1">Золото и ключи 🔑</p>
+                    <p className="text-lg text-yellow-200 font-semibold">Участвуйте в конкурсе — выиграйте 1 МЛН ₽</p>
                   </div>
-                  <div className="bg-black/40 rounded-xl p-6 mb-6 border border-red-500/50">
+                  <div className="bg-black/40 rounded-xl p-6 mb-6 border border-amber-500/50">
                     <div className="text-center mb-4">
-                      <p className="text-sm text-gray-300 mb-2">До начала финала осталось:</p>
-                      <div className="text-6xl font-bold text-red-500 mb-1">4 дня</div>
-                      <div className="text-3xl font-semibold text-yellow-400">120 часов</div>
+                      <p className="text-2xl text-red-500 font-bold mb-2 animate-pulse">⚡ В ЭФИРЕ СЕЙЧАС</p>
+                      <div className="text-4xl font-bold text-yellow-400 mb-1">Выпуск 1</div>
+                      <div className="text-xl font-semibold text-white">Премьерный эпизод</div>
                     </div>
                   </div>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center gap-3 text-lg text-white">
-                      <Icon name="Calendar" size={20} className="text-red-500" />
-                      <span className="font-semibold">Воскресенье, 2 ноября 2025</span>
+                      <Icon name="Calendar" size={20} className="text-amber-500" />
+                      <span className="font-semibold">Понедельник, 10 ноября 2025</span>
                     </div>
                     <div className="flex items-center gap-3 text-lg text-white">
-                      <Icon name="Clock" size={20} className="text-red-500" />
-                      <span className="font-semibold">20:20-23:00 МСК (2 часа 40 мин)</span>
+                      <Icon name="Clock" size={20} className="text-amber-500" />
+                      <span className="font-semibold">21:30 МСК (90 мин)</span>
                     </div>
                     <div className="flex items-center gap-3 text-lg text-white">
-                      <Icon name="MapPin" size={20} className="text-red-500" />
-                      <span>Кремлёвский Дворец</span>
+                      <Icon name="MapPin" size={20} className="text-amber-500" />
+                      <span>Легендарный Форт Боярд</span>
                     </div>
                   </div>
-                  <div className="bg-yellow-500/20 border border-yellow-500 rounded-lg p-4 mb-6">
-                    <p className="text-yellow-200 text-sm font-semibold flex items-center gap-2">
+                  <div className="bg-red-500/20 border border-red-500 rounded-lg p-4 mb-6">
+                    <p className="text-red-200 text-sm font-semibold flex items-center gap-2">
                       <Icon name="AlertCircle" size={18} />
-                      Голосование закрывается сегодня в 22:00! Голосуйте СЕЙЧАС!
+                      Ищите промокоды в эфире! Участвуйте в конкурсе и выигрывайте призы!
                     </p>
                   </div>
                   <Button 
                     size="lg" 
-                    className="bg-red-600 hover:bg-red-700 text-white text-xl py-6 animate-pulse"
+                    className="bg-amber-600 hover:bg-amber-700 text-white text-xl py-6 animate-pulse"
                     onClick={() => scrollToSection('live')}
                   >
-                    <Icon name="Vote" size={24} className="mr-2" />
-                    Голосовать за участника
+                    <Icon name="Play" size={24} className="mr-2" />
+                    Смотреть прямой эфир
                   </Button>
                 </div>
               </div>
@@ -688,8 +689,11 @@ const Index = () => {
                         )}
                       </div>
                       <p className="text-sm text-muted-foreground">{item.duration}</p>
-                      {item.isPremiere && (
+                      {item.isPremiere && !item.isLive && (
                         <p className="text-xs text-orange-500 font-medium mt-1">Каждую субботу в 10:00</p>
+                      )}
+                      {item.isLive && (
+                        <p className="text-xs text-red-500 font-bold mt-1 animate-pulse">⚡ ПРЯМОЙ ЭФИР</p>
                       )}
                     </div>
                   </div>
