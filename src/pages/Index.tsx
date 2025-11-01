@@ -19,6 +19,27 @@ const Index = () => {
 
   const episodes = [
     {
+      id: 700,
+      title: 'Ищи меня - Выпуск 29',
+      date: '31 октября 2025',
+      duration: '60 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/0325cb7d-c207-4428-90a0-3239aaaa3ae5.jpg',
+      category: 'Социальная программа',
+      description: '❤️ Ведущие Максим Зуев и кот Батон встречают трёх гостей, которые ищут своих родных и близких! В этом выпуске все три истории закончились счастливой встречей в студии! Смотрите каждую пятницу в 18:55 на канале НОВЫЕ ДРУЗЬЯ ТВ.',
+      nextEpisode: 'Выпуск 30 — 8 ноября, пятница в 18:55'
+    },
+    {
+      id: 701,
+      title: 'Ищи меня - Выпуск 30 (АНОНС)',
+      date: '8 ноября 2025',
+      duration: '60 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/0325cb7d-c207-4428-90a0-3239aaaa3ae5.jpg',
+      category: 'Социальная программа',
+      description: '🔜 НЕ ПРОПУСТИТЕ юбилейный 30-й выпуск! Ведущие Максим Зуев и кот Батон помогают трём новым гостям найти тех, кого они ищут. Трогательные истории, неожиданные встречи и много эмоций! Пятница, 8 ноября в 18:55 на канале НОВЫЕ ДРУЗЬЯ ТВ.',
+      nextEpisode: 'Выпуск 31 — 15 ноября, пятница в 18:55',
+      isUpcoming: true
+    },
+    {
       id: 0,
       title: 'Travel Show Поехали. Сезон 4, Эпизод 1: Баку',
       date: '27 октября 2025',
@@ -642,6 +663,56 @@ const Index = () => {
                   >
                     <Icon name="Play" size={24} className="mr-2" />
                     Смотреть прямой эфир
+                  </Button>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-purple-700/30 to-pink-600/30 rounded-2xl overflow-hidden border-2 border-purple-500 shadow-2xl mt-12">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-[400px] md:h-auto">
+                  <img
+                    src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/0325cb7d-c207-4428-90a0-3239aaaa3ae5.jpg"
+                    alt="Ищи меня"
+                    className="w-full h-full object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-purple-600 text-white text-xl px-6 py-3">
+                    🔜 УЖЕ В ЭТУ ПЯТНИЦУ
+                  </Badge>
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-purple-950/50 to-pink-950/50">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Icon name="Heart" size={40} className="text-pink-500" />
+                    <Badge className="text-sm bg-pink-500 text-white font-bold">ЮБИЛЕЙНЫЙ 30-й ВЫПУСК</Badge>
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4 text-white">Ищи меня</h3>
+                  <p className="text-xl text-gray-200 mb-4">
+                    Не пропустите юбилейный 30-й выпуск! Ведущие Максим Зуев и кот Батон помогают найти родных и близких.
+                  </p>
+                  <div className="bg-purple-500/30 border-2 border-purple-400 rounded-xl p-4 mb-6">
+                    <p className="text-lg text-purple-200 font-semibold">Три истории поиска — три встречи в студии!</p>
+                  </div>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Calendar" size={20} className="text-purple-400" />
+                      <span className="font-semibold">Пятница, 8 ноября 2025</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Clock" size={20} className="text-purple-400" />
+                      <span className="font-semibold">18:55 МСК (60 мин)</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Users" size={20} className="text-purple-400" />
+                      <span>Ведущие: Максим Зуев и кот Батон</span>
+                    </div>
+                  </div>
+                  <Button 
+                    size="lg" 
+                    className="bg-purple-600 hover:bg-purple-700 text-white text-xl py-6"
+                    onClick={() => setShowIshiMenyaIntro(true)}
+                  >
+                    <Icon name="Play" size={24} className="mr-2" />
+                    Смотреть заставку
                   </Button>
                 </div>
               </div>
