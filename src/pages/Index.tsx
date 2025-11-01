@@ -15,6 +15,7 @@ const Index = () => {
   const [votedFor, setVotedFor] = useState<number | null>(null);
   const [showPromoCode, setShowPromoCode] = useState(false);
   const [currentPromoCode, setCurrentPromoCode] = useState('');
+  const [showIshiMenyaIntro, setShowIshiMenyaIntro] = useState(false);
 
   const episodes = [
     {
@@ -468,7 +469,7 @@ const Index = () => {
               <Icon name="Tv" size={32} className="text-primary" />
               <h1 className="text-2xl font-bold">Новые друзья ТВ</h1>
             </div>
-            <div className="hidden md:flex space-x-6">
+            <div className="hidden md:flex space-x-6 items-center">
               {['home', 'episodes', 'schedule', 'live', 'contacts'].map((section) => (
                 <button
                   key={section}
@@ -484,10 +485,69 @@ const Index = () => {
                   {section === 'contacts' && 'Контакты'}
                 </button>
               ))}
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => setShowIshiMenyaIntro(true)}
+                className="ml-4"
+              >
+                <Icon name="Play" size={16} className="mr-2" />
+                Заставка "Ищи меня"
+              </Button>
             </div>
           </div>
         </div>
       </nav>
+
+      {showIshiMenyaIntro && (
+        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center overflow-hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-4 right-4 text-white hover:bg-white/20 z-10"
+            onClick={() => setShowIshiMenyaIntro(false)}
+          >
+            <Icon name="X" size={24} />
+          </Button>
+          <div className="w-full h-full relative">
+            <div className="absolute inset-0 animate-intro-scene-1">
+              <img
+                src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/51e46945-1093-41dc-9164-d7959157cc56.jpg"
+                alt="Сцена 1"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 animate-intro-scene-2 opacity-0">
+              <img
+                src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/62f56015-b45e-4f5f-98fc-eb78e450dd9d.jpg"
+                alt="Сцена 2"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 animate-intro-scene-3 opacity-0">
+              <img
+                src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/7abec28e-e549-4b02-af1f-e9d32ffc99a5.jpg"
+                alt="Сцена 3"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 animate-intro-scene-4 opacity-0">
+              <img
+                src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/721002d5-d554-46ba-b837-abb98af1bafe.jpg"
+                alt="Сцена 4"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="absolute inset-0 animate-intro-scene-5 opacity-0">
+              <img
+                src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/c386a290-6db1-40f1-8e7d-fd6ad360315d.jpg"
+                alt="Сцена 5"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <section id="home" className="pt-24 pb-16 px-4">
         <div className="container mx-auto">
