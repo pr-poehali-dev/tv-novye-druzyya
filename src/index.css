@@ -66,3 +66,16 @@
     font-family: "Montserrat", sans-serif;
   }
 }
+
+@keyframes scroll-up {
+  from {
+    transform: translateY(100vh);
+  }
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+.animate-scroll-up {
+  animation: scroll-up 45s linear forwards;
+}

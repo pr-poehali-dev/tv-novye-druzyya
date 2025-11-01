@@ -155,6 +155,17 @@ const Index = () => {
       nextEpisode: 'Выпуск 3 — 24 ноября, понедельник в 21:30'
     },
     {
+      id: 500,
+      title: 'Угадывай хорошенько - Выпуск 1 (ПРЕМЬЕРА)',
+      date: '7 декабря 2025',
+      duration: '60 мин',
+      image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/6413845e-a90e-4ce4-9e26-cd8eb2124d0e.jpg',
+      category: 'Игровое шоу',
+      description: '🎯 ПРЕМЬЕРА нового игрового шоу! Участники угадывают загадки, решают головоломки и отвечают на вопросы! Кто окажется самым сообразительным? Веселье и азарт для всей семьи! Смотрите каждую субботу в 19:00 на канале НОВЫЕ ДРУЗЬЯ ТВ.',
+      nextEpisode: 'Выпуск 2 — 14 декабря, суббота в 19:00',
+      showCredits: true
+    },
+    {
       id: 1,
       title: 'Завтрак с Максимом Зуевым: Французские блинчики',
       date: '2 ноября 2025',
@@ -734,6 +745,16 @@ const Index = () => {
                     <Icon name="Share2" size={20} className="mr-2" />
                     Поделиться
                   </Button>
+                  {episode.showCredits && (
+                    <Button 
+                      size="lg" 
+                      variant="outline"
+                      onClick={() => setShowCredits(true)}
+                    >
+                      <Icon name="ScrollText" size={20} className="mr-2" />
+                      Титры
+                    </Button>
+                  )}
                 </div>
               </div>
             </div>
@@ -1012,6 +1033,97 @@ const Index = () => {
                                   <p className="text-2xl font-bold">Телеканал «Новые друзья ТВ»</p>
                                   <p className="text-sm text-gray-500 mt-8">© 2025 ООО «Почтальон Медиа». Все права защищены.</p>
                                 </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    {showCredits && (
+                      <div className="fixed inset-0 bg-black z-50 overflow-hidden">
+                        <Button
+                          variant="ghost"
+                          size="icon"
+                          className="absolute top-4 right-4 text-white hover:bg-white/20 z-10"
+                          onClick={() => setShowCredits(false)}
+                        >
+                          <Icon name="X" size={24} />
+                        </Button>
+                        <div className="h-full flex items-end justify-center pb-4">
+                          <div className="animate-scroll-up text-white text-center space-y-8 py-8">
+                            <div className="mb-16">
+                              <h1 className="text-5xl font-bold mb-4">УГАДЫВАЙ ХОРОШЕНЬКО</h1>
+                              <p className="text-2xl text-gray-400">Премьера • 7 декабря 2025</p>
+                            </div>
+
+                            <div className="space-y-6 text-xl">
+                              <div>
+                                <p className="text-gray-400 text-lg mb-2">ВЕДУЩИЙ</p>
+                                <p className="text-3xl font-bold">Александр Угадайкин</p>
+                              </div>
+
+                              <div className="my-8 border-t border-gray-700 w-64 mx-auto"></div>
+
+                              <div>
+                                <p className="text-gray-400 mb-2">ПРОДЮСЕР</p>
+                                <p className="text-2xl font-semibold">Михаил Игровой</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 mb-2">РЕЖИССЁР</p>
+                                <p className="text-2xl">Светлана Сценарова</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 mb-2">ОПЕРАТОР-ПОСТАНОВЩИК</p>
+                                <p className="text-2xl">Игорь Камеркин</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 mb-2">ЗВУКОРЕЖИССЁР</p>
+                                <p className="text-2xl">Ольга Звуковая</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 mb-2">МОНТАЖ</p>
+                                <p className="text-2xl">Дмитрий Монтажников</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 mb-2">ХУДОЖНИК-ДЕКОРАТОР</p>
+                                <p className="text-2xl">Елена Декорова</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 mb-2">АВТОР ВОПРОСОВ И ЗАГАДОК</p>
+                                <p className="text-2xl">Виктор Загадочный</p>
+                              </div>
+
+                              <div>
+                                <p className="text-gray-400 mb-2">КОМПОЗИТОР</p>
+                                <p className="text-2xl">Анна Музыкантова</p>
+                              </div>
+
+                              <div className="my-12 border-t border-gray-700 w-96 mx-auto"></div>
+
+                              <div>
+                                <p className="text-gray-400 mb-3">СОЗДАНО</p>
+                                <p className="text-3xl font-bold text-orange-500 mb-2">Телеканал НОВЫЕ ДРУЗЬЯ ТВ</p>
+                                <p className="text-gray-400">совместно с</p>
+                                <p className="text-3xl font-bold text-blue-500 mt-2">Компания ДЖУС</p>
+                              </div>
+
+                              <div className="my-12 border-t border-gray-700 w-96 mx-auto"></div>
+
+                              <div className="py-8">
+                                <Icon name="Tv" size={64} className="text-orange-500 mx-auto mb-4" />
+                                <p className="text-4xl font-bold mb-2">НОВЫЕ ДРУЗЬЯ ТВ</p>
+                                <p className="text-xl text-gray-400">Каждую субботу в 19:00</p>
+                              </div>
+
+                              <div className="py-12">
+                                <p className="text-2xl text-gray-500">© 2025 Новые друзья ТВ</p>
+                                <p className="text-xl text-gray-500 mt-2">Все права защищены</p>
                               </div>
                             </div>
                           </div>
