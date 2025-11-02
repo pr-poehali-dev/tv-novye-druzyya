@@ -717,6 +717,62 @@ const Index = () => {
                 </div>
               </div>
             </div>
+
+            <div className="bg-gradient-to-r from-green-700/30 to-lime-600/30 rounded-2xl overflow-hidden border-2 border-green-500 shadow-2xl mt-12">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-[400px] md:h-auto">
+                  <img
+                    src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/9f0b66a0-0911-4b2f-b640-c5edf3ee149e.jpg"
+                    alt="Зов джунглей"
+                    className="w-full h-full object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-red-600 text-white text-xl px-6 py-3 animate-pulse">
+                    🎬 ПРЕМЬЕРА
+                  </Badge>
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-green-950/50 to-lime-950/50">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="text-5xl">🐾</span>
+                    <Badge className="text-sm bg-green-500 text-white font-bold">ЛЕГЕНДАРНАЯ ИГРА ДЕТСТВА</Badge>
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4 text-white">Зов джунглей</h3>
+                  <p className="text-xl text-gray-200 mb-4">
+                    Возвращение легендарного шоу! Ведущий — щенок Рокки. Команды, испытания, джунгли зовут!
+                  </p>
+                  <div className="bg-green-500/30 border-2 border-green-400 rounded-xl p-4 mb-6">
+                    <p className="text-lg text-green-200 font-semibold">🏆 Хищники против травоядных — кто победит?</p>
+                  </div>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Calendar" size={20} className="text-green-400" />
+                      <span className="font-semibold">Среда, 20 ноября 2025</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Clock" size={20} className="text-green-400" />
+                      <span className="font-semibold">18:00 МСК (60 мин)</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Sparkles" size={20} className="text-green-400" />
+                      <span>Ведущий: щенок Рокки 🐶</span>
+                    </div>
+                  </div>
+                  <div className="bg-amber-500/20 border border-amber-400 rounded-lg p-4 mb-6">
+                    <p className="text-amber-200 text-sm font-semibold flex items-center gap-2">
+                      <Icon name="Zap" size={18} />
+                      Испытания, конкурсы, призы! Не пропустите первый выпуск!
+                    </p>
+                  </div>
+                  <Button 
+                    size="lg" 
+                    className="bg-green-600 hover:bg-green-700 text-white text-xl py-6"
+                    onClick={() => scrollToSection('episodes')}
+                  >
+                    <Icon name="Play" size={24} className="mr-2" />
+                    Узнать больше
+                  </Button>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="mt-12">
