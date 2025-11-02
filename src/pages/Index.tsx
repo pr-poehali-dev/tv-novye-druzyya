@@ -16,6 +16,7 @@ const Index = () => {
   const [showPromoCode, setShowPromoCode] = useState(false);
   const [currentPromoCode, setCurrentPromoCode] = useState('');
   const [showIshiMenyaIntro, setShowIshiMenyaIntro] = useState(false);
+  const [showZovDzhungleiIntro, setShowZovDzhungleiIntro] = useState(false);
 
   const episodes = [
     {
@@ -535,6 +536,15 @@ const Index = () => {
                 <Icon name="Play" size={16} className="mr-2" />
                 Заставка "Ищи меня"
               </Button>
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => setShowZovDzhungleiIntro(true)}
+                className="ml-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-white"
+              >
+                <Icon name="Play" size={16} className="mr-2" />
+                Заставка "Зов джунглей"
+              </Button>
             </div>
           </div>
         </div>
@@ -585,6 +595,105 @@ const Index = () => {
                 alt="Сцена 5"
                 className="w-full h-full object-cover"
               />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showZovDzhungleiIntro && (
+        <div className="fixed inset-0 bg-black z-50 flex items-center justify-center overflow-hidden">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="absolute top-4 right-4 text-white hover:bg-white/20 z-10"
+            onClick={() => setShowZovDzhungleiIntro(false)}
+          >
+            <Icon name="X" size={24} />
+          </Button>
+          <div className="w-full h-full relative">
+            <div className="absolute inset-0 animate-intro-scene-1">
+              <img
+                src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/d666fc0f-940c-40cc-964e-bcf28b19f294.jpg"
+                alt="Джунгли"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="text-center animate-fade-in">
+                  <h2 className="text-8xl font-black text-green-400 drop-shadow-2xl mb-4" style={{ textShadow: '4px 4px 8px rgba(0,0,0,0.8)' }}>
+                    ЗОВ ДЖУНГЛЕЙ
+                  </h2>
+                  <p className="text-3xl text-yellow-300 font-bold drop-shadow-lg">🐾 Легендарная игра возвращается! 🌴</p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute inset-0 animate-intro-scene-2 opacity-0">
+              <img
+                src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/f2d780ce-cc30-4f2e-a244-6ebe89cb788d.jpg"
+                alt="Команда Хищники"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                <div className="text-center animate-fade-in">
+                  <div className="text-9xl mb-4">🦁🐯🐺</div>
+                  <h3 className="text-7xl font-black text-orange-500 drop-shadow-2xl" style={{ textShadow: '4px 4px 8px rgba(0,0,0,0.8)' }}>
+                    ХИЩНИКИ
+                  </h3>
+                  <p className="text-3xl text-orange-300 font-bold mt-4">Тигр • Лев • Волк</p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute inset-0 animate-intro-scene-3 opacity-0">
+              <img
+                src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/b5d4828e-ea85-49ef-bb83-fdd45127cbef.jpg"
+                alt="Команда Травоядные"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                <div className="text-center animate-fade-in">
+                  <div className="text-9xl mb-4">🐘🦒🦓</div>
+                  <h3 className="text-7xl font-black text-green-400 drop-shadow-2xl" style={{ textShadow: '4px 4px 8px rgba(0,0,0,0.8)' }}>
+                    ТРАВОЯДНЫЕ
+                  </h3>
+                  <p className="text-3xl text-green-300 font-bold mt-4">Слон • Жираф • Зебра</p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute inset-0 animate-intro-scene-4 opacity-0">
+              <img
+                src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/dcd7b531-8950-4f13-9c1f-0ff8c3add5ae.jpg"
+                alt="Все вместе"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-black/60 via-transparent to-black/80">
+                <div className="text-center animate-fade-in">
+                  <div className="text-9xl mb-6">🐶</div>
+                  <h3 className="text-6xl font-black text-yellow-400 drop-shadow-2xl mb-4" style={{ textShadow: '4px 4px 8px rgba(0,0,0,0.8)' }}>
+                    ВЕДУЩИЙ: ЩЕНОК РОККИ
+                  </h3>
+                  <div className="bg-pink-600/80 rounded-3xl px-8 py-4 inline-block mb-6">
+                    <p className="text-4xl font-black text-white">🎁 СПЕЦИАЛЬНЫЕ ПОДАРКИ!</p>
+                  </div>
+                  <p className="text-3xl text-green-300 font-bold">Испытания • Конкурсы • Призы</p>
+                </div>
+              </div>
+            </div>
+            <div className="absolute inset-0 animate-intro-scene-5 opacity-0">
+              <div className="absolute inset-0 bg-gradient-to-br from-green-600 via-lime-500 to-green-600"></div>
+              <div className="absolute inset-0 flex flex-col items-center justify-center">
+                <div className="text-center animate-scale-in">
+                  <div className="flex items-center justify-center gap-6 mb-8">
+                    <span className="text-9xl">🐾</span>
+                    <h2 className="text-9xl font-black text-white drop-shadow-2xl">ЗОВ ДЖУНГЛЕЙ</h2>
+                    <span className="text-9xl">🌴</span>
+                  </div>
+                  <div className="bg-red-600 rounded-full px-12 py-6 inline-block mb-8 shadow-2xl">
+                    <p className="text-5xl font-black text-white">ПРЕМЬЕРА</p>
+                    <p className="text-4xl font-black text-yellow-300">20 НОЯБРЯ • 18:00</p>
+                  </div>
+                  <p className="text-4xl text-white font-bold mb-4">НЕ ПРОПУСТИТЕ!</p>
+                  <p className="text-3xl text-yellow-200 font-bold">Только на канале НОВЫЕ ДРУЗЬЯ ТВ</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -642,10 +751,10 @@ const Index = () => {
               <Button 
                 size="lg" 
                 className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black font-black text-2xl py-8 px-12 rounded-full shadow-2xl"
-                onClick={() => scrollToSection('episodes')}
+                onClick={() => setShowZovDzhungleiIntro(true)}
               >
                 <Icon name="Play" size={32} className="mr-3" />
-                СМОТРЕТЬ АНОНС
+                СМОТРЕТЬ ЗАСТАВКУ
               </Button>
             </div>
           </div>
@@ -824,10 +933,10 @@ const Index = () => {
                   <Button 
                     size="lg" 
                     className="bg-green-600 hover:bg-green-700 text-white text-xl py-6"
-                    onClick={() => scrollToSection('episodes')}
+                    onClick={() => setShowZovDzhungleiIntro(true)}
                   >
                     <Icon name="Play" size={24} className="mr-2" />
-                    Узнать больше
+                    Смотреть заставку
                   </Button>
                 </div>
               </div>
