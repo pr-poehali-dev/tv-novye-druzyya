@@ -183,7 +183,7 @@ const Index = () => {
       duration: '20 мин',
       image: 'https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/9f0b66a0-0911-4b2f-b640-c5edf3ee149e.jpg',
       category: 'Детское игровое шоу',
-      description: '🐾 ПРЕМЬЕРА легендарной игры детства! Ведущий - щенок Рокки. Две команды: Хищники против Травоядных! Испытания на скорость, ловкость и смекалку. Кто соберёт больше бананов и кокосов? Джунгли зовут! Среда, 20 ноября в 18:00 на канале НОВЫЕ ДРУЗЬЯ ТВ.',
+      description: '🐾 ПРЕМЬЕРА легендарной игры детства! Ведущий - щенок Рокки. Две команды: Хищники против Травоядных! Испытания на скорость, ловкость и смекалку. 🎁 ЗА ПРОХОЖДЕНИЕ В ДЖУНГЛЯХ - СПЕЦИАЛЬНЫЕ ДЕТСКИЕ ПОДАРКИ! Не пропустите - будет круто и весело для детей! Среда, 20 ноября в 18:00 только на канале НОВЫЕ ДРУЗЬЯ ТВ.',
       nextEpisode: 'Выпуск 2 — 27 ноября, среда в 18:00',
       videoSegments: [
         { time: '00:00-02:00', title: 'Открытие и представление команд', description: 'Щенок Рокки приветствует зрителей и знакомит нас с двумя командами: Хищники (тигр, лев, волк) и Травоядные (слон, жираф, зебра)' },
@@ -619,6 +619,37 @@ const Index = () => {
             </div>
           </div>
 
+          <div className="mt-12 bg-gradient-to-r from-green-600 via-lime-500 to-green-600 rounded-3xl p-1 shadow-2xl animate-pulse-slow">
+            <div className="bg-gradient-to-br from-green-900 to-lime-900 rounded-3xl p-8 text-center">
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <span className="text-7xl">🐾</span>
+                <h3 className="text-5xl font-black text-white">ЗОВ ДЖУНГЛЕЙ</h3>
+                <span className="text-7xl">🌴</span>
+              </div>
+              <div className="bg-red-600 rounded-full px-8 py-3 inline-block mb-4">
+                <p className="text-2xl font-black text-white">🎬 ПРЕМЬЕРА 20 НОЯБРЯ В 18:00</p>
+              </div>
+              <div className="max-w-3xl mx-auto space-y-4">
+                <div className="bg-pink-500/30 border-2 border-pink-400 rounded-2xl p-6">
+                  <p className="text-3xl font-bold text-pink-200 flex items-center justify-center gap-2">
+                    🎁 СПЕЦИАЛЬНЫЕ ДЕТСКИЕ ПОДАРКИ!
+                  </p>
+                </div>
+                <p className="text-2xl text-yellow-200 font-bold">НЕ ПРОПУСТИТЕ!</p>
+                <p className="text-xl text-white">Будет круто и весело для детей! 🎉</p>
+                <p className="text-lg text-green-200">Только на телеканале НОВЫЕ ДРУЗЬЯ ТВ</p>
+              </div>
+              <Button 
+                size="lg" 
+                className="mt-6 bg-yellow-500 hover:bg-yellow-600 text-black font-black text-2xl py-8 px-12 rounded-full shadow-2xl"
+                onClick={() => scrollToSection('episodes')}
+              >
+                <Icon name="Play" size={32} className="mr-3" />
+                СМОТРЕТЬ АНОНС
+              </Button>
+            </div>
+          </div>
+
           <div className="mt-12">
             <div className="bg-gradient-to-r from-amber-700/30 to-yellow-600/30 rounded-2xl overflow-hidden border-2 border-amber-500 shadow-2xl animate-pulse-slow">
               <div className="grid md:grid-cols-2 gap-0">
@@ -759,6 +790,11 @@ const Index = () => {
                   <p className="text-xl text-gray-200 mb-4">
                     Возвращение легендарного шоу! Ведущий — щенок Рокки. Команды, испытания, джунгли зовут!
                   </p>
+                  <div className="bg-gradient-to-r from-pink-500/30 to-purple-500/30 border-2 border-pink-400 rounded-xl p-4 mb-4">
+                    <p className="text-xl text-pink-200 font-bold flex items-center gap-2">
+                      🎁 СПЕЦИАЛЬНЫЕ ДЕТСКИЕ ПОДАРКИ ЗА ПРОХОЖДЕНИЕ!
+                    </p>
+                  </div>
                   <div className="bg-green-500/30 border-2 border-green-400 rounded-xl p-4 mb-6">
                     <p className="text-lg text-green-200 font-semibold">🏆 Хищники против травоядных — кто победит?</p>
                   </div>
@@ -769,17 +805,20 @@ const Index = () => {
                     </div>
                     <div className="flex items-center gap-3 text-lg text-white">
                       <Icon name="Clock" size={20} className="text-green-400" />
-                      <span className="font-semibold">18:00 МСК (60 мин)</span>
+                      <span className="font-semibold">18:00 МСК (20 мин)</span>
                     </div>
                     <div className="flex items-center gap-3 text-lg text-white">
                       <Icon name="Sparkles" size={20} className="text-green-400" />
                       <span>Ведущий: щенок Рокки 🐶</span>
                     </div>
                   </div>
-                  <div className="bg-amber-500/20 border border-amber-400 rounded-lg p-4 mb-6">
-                    <p className="text-amber-200 text-sm font-semibold flex items-center gap-2">
-                      <Icon name="Zap" size={18} />
-                      Испытания, конкурсы, призы! Не пропустите первый выпуск!
+                  <div className="bg-yellow-500/20 border-2 border-yellow-400 rounded-lg p-4 mb-6">
+                    <p className="text-yellow-200 text-lg font-bold flex items-center gap-2 mb-2">
+                      <Icon name="PartyPopper" size={20} />
+                      НЕ ПРОПУСТИТЕ!
+                    </p>
+                    <p className="text-yellow-100 text-sm">
+                      Будет круто и весело для детей! Испытания, конкурсы и подарки!
                     </p>
                   </div>
                   <Button 
