@@ -1003,6 +1003,56 @@ const Index = () => {
           </div>
 
           <div className="mt-12">
+            <div className="bg-gradient-to-r from-blue-700/30 to-red-700/30 rounded-2xl overflow-hidden border-2 border-blue-500 shadow-2xl mb-12">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-[400px] md:h-auto">
+                  <img
+                    src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/b3e9a4f2-1a8e-4d5f-9c6e-7f8a9b0c1d2e.jpg"
+                    alt="Истории России"
+                    className="w-full h-full object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-red-600 text-white text-xl px-6 py-3 animate-pulse">
+                    🇷🇺 НОВЫЕ ВЫПУСКИ ВЫХОДНЫЕ
+                  </Badge>
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-blue-950/50 to-red-950/50">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Icon name="Book" size={40} className="text-blue-400" />
+                    <Badge className="text-sm bg-blue-500 text-white font-bold">ИСТОРИЧЕСКИЙ ЦИКЛ</Badge>
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4 text-white">Истории России</h3>
+                  <p className="text-xl text-gray-200 mb-4">
+                    Увлекательные рассказы о важнейших событиях российской истории. От древней Руси до наших дней!
+                  </p>
+                  <div className="bg-blue-500/30 border-2 border-blue-400 rounded-xl p-4 mb-6">
+                    <p className="text-lg text-blue-200 font-semibold">Каждая передача — захватывающий экскурс в прошлое!</p>
+                  </div>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Calendar" size={20} className="text-red-400" />
+                      <span className="font-semibold">Суббота в 16:00 МСК</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Calendar" size={20} className="text-red-400" />
+                      <span className="font-semibold">Воскресенье в 14:00 МСК</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Clock" size={20} className="text-blue-400" />
+                      <span>Продолжительность: 45 минут</span>
+                    </div>
+                  </div>
+                  <Button 
+                    size="lg" 
+                    className="bg-blue-600 hover:bg-blue-700 text-white text-xl py-6"
+                    onClick={() => scrollToSection('live')}
+                  >
+                    <Icon name="Play" size={24} className="mr-2" />
+                    Смотреть сейчас
+                  </Button>
+                </div>
+              </div>
+            </div>
+
             <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl overflow-hidden border-2 border-orange-500/50 shadow-2xl">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-[400px] md:h-auto">
