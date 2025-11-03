@@ -1053,6 +1053,57 @@ const Index = () => {
               </div>
             </div>
 
+            <div className="bg-gradient-to-r from-green-600/30 to-teal-600/30 rounded-2xl overflow-hidden border-2 border-green-500 shadow-2xl mb-12">
+              <div className="grid md:grid-cols-2 gap-0">
+                <div className="relative h-[400px] md:h-auto">
+                  <img
+                    src="https://cdn.poehali.dev/projects/ceb65ec6-9cc6-44cc-8baf-1cef258052ca/files/toy-island-survival.jpg"
+                    alt="Игрушечный остров: Битва за выживание"
+                    className="w-full h-full object-cover"
+                  />
+                  <Badge className="absolute top-4 left-4 bg-red-600 text-white text-xl px-6 py-3 animate-pulse">
+                    🎮 НОВЫЙ СЕЗОН
+                  </Badge>
+                </div>
+                <div className="p-8 md:p-12 flex flex-col justify-center bg-gradient-to-br from-green-950/60 to-teal-950/60">
+                  <div className="flex items-center gap-2 mb-4">
+                    <Icon name="Trophy" size={40} className="text-green-400" />
+                    <Badge className="text-sm bg-green-500 text-white font-bold">ПРИКЛЮЧЕНЧЕСКОЕ ШОУ</Badge>
+                  </div>
+                  <h3 className="text-4xl font-bold mb-4 text-white">Игрушечный остров</h3>
+                  <div className="text-2xl font-bold text-green-400 mb-4">Битва за выживание</div>
+                  <p className="text-xl text-gray-200 mb-4">
+                    Команды игрушечных героев сражаются за ресурсы на загадочном острове! Испытания, квесты и невероятные приключения ждут вас в новом сезоне!
+                  </p>
+                  <div className="bg-green-500/30 border-2 border-green-400 rounded-xl p-4 mb-6">
+                    <p className="text-lg text-green-200 font-semibold">🔥 Премьера нового сезона уже скоро!</p>
+                  </div>
+                  <div className="space-y-3 mb-6">
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Calendar" size={20} className="text-green-400" />
+                      <span className="font-semibold">Суббота, 9 ноября 2025</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Clock" size={20} className="text-green-400" />
+                      <span className="font-semibold">18:00 МСК</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-lg text-white">
+                      <Icon name="Users" size={20} className="text-green-400" />
+                      <span>Семейное шоу для всех возрастов</span>
+                    </div>
+                  </div>
+                  <Button 
+                    size="lg" 
+                    className="bg-green-600 hover:bg-green-700 text-white text-xl py-6"
+                    onClick={() => scrollToSection('live')}
+                  >
+                    <Icon name="Play" size={24} className="mr-2" />
+                    Не пропустите премьеру!
+                  </Button>
+                </div>
+              </div>
+            </div>
+
             <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded-2xl overflow-hidden border-2 border-orange-500/50 shadow-2xl">
               <div className="grid md:grid-cols-2 gap-0">
                 <div className="relative h-[400px] md:h-auto">
